@@ -1,0 +1,97 @@
+{
+  "ajiki": null,
+  "nagato": null,
+  "hatori": null,
+  "amado": null,
+  "kemigawa": null,
+  "inba_average": {
+    "reference": {
+      "name": "常時満水位",
+      "value": 2.3
+    },
+    "boundaries": []
+  },
+  "yoshitaka_aux": null,
+  "usui_aux": null,
+  "kaburagi": {
+    "source": "千葉県 水位グラフ:鏑木橋",
+    "boundaries": [
+      {
+        "name": "水防団待機水位",
+        "level": "standby",
+        "value": 3.5
+      },
+      {
+        "name": "はん濫注意水位",
+        "level": "caution",
+        "value": 4
+      },
+      {
+        "name": "はん濫危険水位",
+        "level": "danger",
+        "value": 4.8
+      },
+      {
+        "name": "計画高水位",
+        "level": "design",
+        "value": 4.8
+      }
+    ]
+  },
+  "kitainba": {
+    "source": "千葉県 雨量・水位情報",
+    "boundaries": [
+      {
+        "name": "水防団待機水位",
+        "level": "standby",
+        "value": 2.8
+      },
+      {
+        "name": "はん濫注意水位",
+        "level": "caution",
+        "value": 3.4
+      },
+      {
+        "name": "はん濫危険水位",
+        "level": "danger",
+        "value": null
+      },
+      {
+        "name": "計画高水位",
+        "level": "design",
+        "value": 4.25
+      }
+    ],
+    "evac_guide": {
+      "level4": 2.65,
+      "level5": 2.8,
+      "basis": "Y.P.",
+      "source": "千葉県報道資料 2026-09-28"
+    }
+  },
+  "nishiinba": {
+    "source": "千葉県 雨量・水位情報",
+    "boundaries": [
+      {
+        "name": "水防団待機水位",
+        "level": "standby",
+        "value": 2.8
+      },
+      {
+        "name": "はん濫注意水位",
+        "level": "caution",
+        "value": 3.4
+      },
+      {
+        "name": "はん濫危険水位",
+        "level": "danger",
+        "value": null
+      },
+      {
+        "name": "計画高水位",
+        "level": "design",
+        "value": 4.25
+      }
+    ]
+  }
+}

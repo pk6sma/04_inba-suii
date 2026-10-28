@@ -1,0 +1,116 @@
+{
+  "stations": [
+    {
+      "id": "ajiki",
+      "name": "利根川｜安食",
+      "source": "mizukan",
+      "order": 1,
+      "latitude": null,
+      "longitude": null,
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+    },
+    {
+      "id": "nagato",
+      "name": "長門川",
+      "source": "mizukan",
+      "order": 2,
+      "latitude": null,
+      "longitude": null,
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+    },
+    {
+      "id": "hatori",
+      "name": "鹿島川｜羽鳥",
+      "source": "mizukan",
+      "order": 3,
+      "latitude": null,
+      "longitude": null,
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+    },
+    {
+      "id": "amado",
+      "name": "花見川｜天戸",
+      "source": "mizukan",
+      "order": 4,
+      "latitude": null,
+      "longitude": null,
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+    },
+    {
+      "id": "kemigawa",
+      "name": "花見川｜検見川",
+      "source": "mizukan",
+      "order": 5,
+      "latitude": null,
+      "longitude": null,
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+    },
+    {
+      "id": "inba_average",
+      "name": "印旛沼平均",
+      "source": "mizukan",
+      "order": 6,
+      "latitude": null,
+      "longitude": null,
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+    },
+    {
+      "id": "yoshitaka_aux",
+      "name": "北印旛沼｜吉高（補助値）",
+      "source": "mizukan",
+      "order": 7,
+      "latitude": null,
+      "longitude": null,
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+    },
+    {
+      "id": "usui_aux",
+      "name": "西印旛沼｜臼井（補助値）",
+      "source": "mizukan",
+      "order": 8,
+      "latitude": null,
+      "longitude": null,
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+    },
+    {
+      "id": "kaburagi",
+      "name": "高崎川｜鏑木橋",
+      "source": "chiba_suibo",
+      "order": 1,
+      "match_name": "鏑木橋",
+      "latitude": null,
+      "longitude": null,
+      "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html"
+    },
+    {
+      "id": "kitainba",
+      "name": "北印旛沼",
+      "source": "chiba_suibo",
+      "order": 2,
+      "match_name": "北印旛沼",
+      "latitude": null,
+      "longitude": null,
+      "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html"
+    },
+    {
+      "id": "nishiinba",
+      "name": "西印旛沼",
+      "source": "chiba_suibo",
+      "order": 3,
+      "match_name": "西印旛沼",
+      "latitude": null,
+      "longitude": null,
+      "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html"
+    }
+  ],
+  "mismatch_pairs": [
+    {
+      "primary": "kitainba",
+      "auxiliary": "yoshitaka_aux"
+    },
+    {
+      "primary": "nishiinba",
+      "auxiliary": "usui_aux"
+    }
+  ]
+}
