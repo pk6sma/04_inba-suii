@@ -6,13 +6,14 @@
       "short_name": "印旛水門",
       "check_label": "F1",
       "map_visible": true,
-      "lat": 35.829739,
-      "lon": 140.246262,
-      "coord_status": "candidate",
+      "lat": 35.853066848928286,
+      "lon": 140.23599388095863,
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/ajiki.json",
       "coord_query": "千葉県印旛郡栄町安食",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
-      "coord_matched_address": "千葉県栄町安食"
+      "coord_note": "ユーザー指定の緯度経度へ修正し、全件確定の指示により確定。coord_sourceは初回検索記録",
+      "coord_matched_address": "千葉県栄町安食",
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "inba_kijo",
@@ -20,13 +21,14 @@
       "short_name": "印旛機場",
       "check_label": "F2",
       "map_visible": true,
-      "lat": 35.829739,
-      "lon": 140.246262,
-      "coord_status": "candidate",
+      "lat": 35.851493764458766,
+      "lon": 140.23825192759656,
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/ajiki.json",
       "coord_query": "千葉県印旛郡栄町安食",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
-      "coord_matched_address": "千葉県栄町安食"
+      "coord_note": "ユーザー指定の緯度経度へ修正し、全件確定の指示により確定。coord_sourceは初回検索記録",
+      "coord_matched_address": "千葉県栄町安食",
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "sakanao_suimon",
@@ -36,11 +38,12 @@
       "map_visible": true,
       "lat": 35.821274,
       "lon": 140.261261,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/sakanao.json",
       "coord_query": "千葉県印旛郡栄町酒直",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
-      "coord_matched_address": "千葉県栄町酒直"
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
+      "coord_matched_address": "千葉県栄町酒直",
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "sakanao_kijo",
@@ -50,11 +53,12 @@
       "map_visible": true,
       "lat": 35.821274,
       "lon": 140.261261,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/sakanao.json",
       "coord_query": "千葉県印旛郡栄町酒直",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
-      "coord_matched_address": "千葉県栄町酒直"
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
+      "coord_matched_address": "千葉県栄町酒直",
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "owada_kijo",
@@ -64,11 +68,12 @@
       "map_visible": true,
       "lat": 35.728397,
       "lon": 140.1194,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/owada.json",
       "coord_query": "千葉県八千代市村上",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
-      "coord_matched_address": "千葉県八千代市村上"
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
+      "coord_matched_address": "千葉県八千代市村上",
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "amado_gate",
@@ -78,11 +83,12 @@
       "map_visible": true,
       "lat": 35.679436,
       "lon": 140.090439,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/amado.json",
       "coord_query": "千葉県千葉市花見川区天戸町",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
-      "coord_matched_address": "千葉県千葉市花見川区天戸町"
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
+      "coord_matched_address": "千葉県千葉市花見川区天戸町",
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "nagasaku_gate",
@@ -92,11 +98,12 @@
       "map_visible": true,
       "lat": 35.680374,
       "lon": 140.07663,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/nagasaku.json",
       "coord_query": "千葉県千葉市花見川区長作町",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
-      "coord_matched_address": "千葉県千葉市花見川区長作町"
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
+      "coord_matched_address": "千葉県千葉市花見川区長作町",
+      "coord_confirmation_source": "data/coordinate_approval.json"
     }
   ]
 }

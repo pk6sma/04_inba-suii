@@ -10,13 +10,14 @@
       "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
       "lat": 35.829739,
       "lon": 140.246262,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/ajiki.json",
       "coord_query": "千葉県印旛郡栄町安食",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県栄町安食",
       "map_number": 5,
-      "map_visible": true
+      "map_visible": true,
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "nagato",
@@ -26,14 +27,15 @@
       "latitude": null,
       "longitude": null,
       "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
-      "lat": null,
-      "lon": null,
-      "coord_status": "missing",
+      "lat": 35.821437663417974,
+      "lon": 140.25054019875998,
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/nagato.json",
       "coord_query": "長門川",
-      "coord_note": "結果なし、または複数候補を一意に選べないため未取得",
+      "coord_note": "ユーザー指定の緯度経度へ修正し、全件確定の指示により確定。coord_sourceは初回検索記録",
       "map_number": 6,
-      "map_visible": true
+      "map_visible": true,
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "hatori",
@@ -43,15 +45,16 @@
       "latitude": null,
       "longitude": null,
       "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
-      "lat": 35.709606,
-      "lon": 140.201492,
-      "coord_status": "candidate",
+      "lat": 35.715961,
+      "lon": 140.208665,
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/hatori.json",
       "coord_query": "千葉県佐倉市羽鳥",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_note": "ユーザー指定の緯度経度へ修正し、全件確定の指示により確定。coord_sourceは初回検索記録",
       "coord_matched_address": "千葉県佐倉市羽鳥",
       "map_number": 4,
-      "map_visible": true
+      "map_visible": true,
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "amado",
@@ -63,13 +66,14 @@
       "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
       "lat": 35.679436,
       "lon": 140.090439,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/amado.json",
       "coord_query": "千葉県千葉市花見川区天戸町",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県千葉市花見川区天戸町",
       "map_number": 7,
-      "map_visible": true
+      "map_visible": true,
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "kemigawa",
@@ -81,13 +85,14 @@
       "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
       "lat": 35.653198,
       "lon": 140.065796,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/kemigawa.json",
       "coord_query": "千葉県千葉市花見川区検見川町",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県千葉市花見川区検見川町",
       "map_number": 8,
-      "map_visible": true
+      "map_visible": true,
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "inba_average",
@@ -145,13 +150,14 @@
       "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html",
       "lat": 35.712799,
       "lon": 140.22998,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/kaburagi.json",
       "coord_query": "千葉県佐倉市表町3-17-1",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県佐倉市表町三丁目１７番",
       "map_number": 1,
-      "map_visible": true
+      "map_visible": true,
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "kitainba",
@@ -164,13 +170,14 @@
       "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html",
       "lat": 35.79121,
       "lon": 140.235336,
-      "coord_status": "candidate",
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/kitainba.json",
       "coord_query": "千葉県印西市吉高",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県印西市吉高",
       "map_number": 3,
-      "map_visible": true
+      "map_visible": true,
+      "coord_confirmation_source": "data/coordinate_approval.json"
     },
     {
       "id": "nishiinba",
@@ -181,15 +188,16 @@
       "latitude": null,
       "longitude": null,
       "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html",
-      "lat": 35.73074,
-      "lon": 140.190536,
-      "coord_status": "candidate",
+      "lat": 35.742517423521335,
+      "lon": 140.18490536131614,
+      "coord_status": "confirmed",
       "coord_source": "data/coordinate_sources/nishiinba.json",
       "coord_query": "千葉県佐倉市臼井字遠部下",
-      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_note": "ユーザー指定の緯度経度へ修正し、全件確定の指示により確定。coord_sourceは初回検索記録",
       "coord_matched_address": "千葉県佐倉市臼井",
       "map_number": 2,
-      "map_visible": true
+      "map_visible": true,
+      "coord_confirmation_source": "data/coordinate_approval.json"
     }
   ],
   "mismatch_pairs": [
