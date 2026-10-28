@@ -47,7 +47,7 @@ def test_run_twice_and_failure_preserves_state(tmp_path, fixture_data):
     assert second["summary"]["failed"] == 3
     with (tmp_path / "out/facility_log.csv").open(encoding="utf-8", newline="") as stream:
         assert len(list(csv.reader(stream))) == 15  # header + 7 + 7
-    assert len((tmp_path / "out/history/2026-10-29.jsonl").read_text(encoding="utf-8").splitlines()) == 2
+    assert len((tmp_path / "out/history/2026-10.jsonl").read_text(encoding="utf-8").splitlines()) == 2
     assert json.loads((tmp_path / "out/latest.json").read_text(encoding="utf-8")) == second
 
 

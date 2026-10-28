@@ -1,0 +1,88 @@
+name: Inba water watch
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Tokyo
+  PYTHONIOENCODING: utf-8
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Fetch once
+        shell: bash
+        run: |
+          code=0
+          python inba_watch.py --once || code=$?
+          # Exit 2 means latest.json was written with missing/stale stations.
+          if [[ "$code" -ne 0 && "$code" -ne 2 ]]; then
+            exit "$code"
+          fi
+
+      - name: Render scheduled and event cards
+        run: python render_card.py
+
+      - name: Publish output before notifying
+        id: publish
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f -- out/
+          if ! git diff --cached --quiet; then
+            git commit -m "Update water observations and cards"
+            git push origin "HEAD:${{ github.event.repository.default_branch }}"
+          fi
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Notify event webhook
+        id: notify
+        continue-on-error: true
+        env:
+          GROK_WEBHOOK_URL: ${{ secrets.GROK_WEBHOOK_URL }}
+          GROK_WEBHOOK_KEY: ${{ secrets.GROK_WEBHOOK_KEY }}
+          CARD_REVISION: ${{ steps.publish.outputs.revision }}
+        run: python notify.py
+
+      - name: Save notification log
+        if: ${{ always() && steps.publish.outcome == 'success' }}
+        shell: bash
+        run: |
+          if [[ -f out/notify_log.csv ]]; then
+            git add -f -- out/notify_log.csv
+            if ! git diff --cached --quiet; then
+              git commit -m "Record webhook delivery outcome"
+              git push origin "HEAD:${{ github.event.repository.default_branch }}"
+            fi
+          fi
+
+      - name: Report notification failure
+        if: ${{ always() && steps.notify.outcome == 'failure' }}
+        run: exit 1

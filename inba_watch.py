@@ -18,6 +18,46 @@ def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+
+def compact_history(folder):
+    """Migrate daily files to monthly JSONL, retaining original files in an archive."""
+    import re
+    folder=Path(folder)
+    if not folder.exists(): return
+    groups={}
+    for path in sorted(folder.glob("*.jsonl")):
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}\.jsonl",path.name):
+            datetime.strptime(path.stem,"%Y-%m-%d")
+            groups.setdefault(path.name[:7],[]).append(path)
+    archive=folder.parent/"history_archive"
+    for month,paths in groups.items():
+        target=folder/f"{month}.jsonl"
+        records=[]
+        seen=set()
+        for path in ([target] if target.exists() else [])+paths:
+            with path.open(encoding="utf-8") as stream:
+                for line in stream:
+                    if not line.strip(): continue
+                    value=json.loads(line)
+                    if not isinstance(value,dict) or "stations" not in value:
+                        raise ValueError("Invalid history record")
+                    identity=json.dumps(value,sort_keys=True,ensure_ascii=False)
+                    if identity not in seen:
+                        records.append(value)
+                        seen.add(identity)
+        archive.mkdir(exist_ok=True)
+        for path in paths:
+            if (archive/path.name).exists():
+                raise ValueError("History archive already exists; refusing overwrite")
+        temporary=target.with_suffix(".jsonl.tmp")
+        with temporary.open("w",encoding="utf-8",newline="\n") as stream:
+            for record in records:
+                stream.write(json.dumps(record,ensure_ascii=False,allow_nan=False)+"\n")
+        temporary.replace(target)
+        for path in paths:
+            path.rename(archive/path.name)
+
+
 def read_history(folder):
     result = []
     if folder.exists():
@@ -87,6 +127,7 @@ def run_once(root=ROOT, loader=load_source, now=None):
     previous = read_json(out / "state.json") if (out / "state.json").exists() else {"stations": {}}
     if not isinstance(previous, dict) or not isinstance(previous.get("stations"), dict):
         raise ValueError("Invalid state.json")
+    compact_history(out / "history")
     history = read_history(out / "history")
     results = {}
     for source, parser in (("mizukan", mizukan.parse), ("chiba_suibo", chiba_suibo.parse)):
@@ -121,7 +162,7 @@ def run_once(root=ROOT, loader=load_source, now=None):
         append_json_line(out / "mismatch.log", {"generated_at": now.isoformat(), **record})
     for record in suspects:
         append_json_line(out / "stale_suspect.log", {"generated_at": now.isoformat(), **record})
-    append_json_line(out / "history" / f"{now.astimezone(JST):%Y-%m-%d}.jsonl",
+    append_json_line(out / "history" / f"{now.astimezone(JST):%Y-%m}.jsonl",
                      {"generated_at": now.isoformat(), "stations": rows})
     write_json(out / "latest.json", latest)
     write_json(out / "state.json", state)

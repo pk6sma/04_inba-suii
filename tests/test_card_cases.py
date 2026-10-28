@@ -106,4 +106,5 @@ def test_facility_state_uses_saved_source_id(tmp_path):
     latest["facilities"][0]["state"]="排水中"  # fixture order 1 = 印旛機場
     result=render(latest,tmp_path/"facility.png")
     with Image.open(result["output"]) as im:
-        assert (197,48,48) in im.getdata()
+        assert im.getcolors(maxcolors=1000000) is not None
+        assert any(color == (197,48,48) for _,color in im.getcolors(maxcolors=1000000))

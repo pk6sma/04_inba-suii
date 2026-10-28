@@ -1,4 +1,7 @@
-# 第3段階：模式図の位置確定・平常カード再確認待ち
+# 第3段階：制作履歴
+
+現行仕様・実行方法・GitHub設定は [operations.md](operations.md) が正です。
+平常カードの承認後、event/欠測/通知/Actionsを実装済みです。以下は各段階の履歴です。
 
 ## 現行方針（以下の方法A・地理座標描画の記録より優先）
 - 方法A/Bは中止。assets/basemap_schematic.pngを使用。
