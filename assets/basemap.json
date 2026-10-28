@@ -1,0 +1,120 @@
+{
+  "projection": "EPSG:3857",
+  "tile_size": 256,
+  "zoom": 11,
+  "width": 700,
+  "height": 560,
+  "world_pixel_origin": {
+    "x": 465953,
+    "y": 206085
+  },
+  "top_left": {
+    "lat": 35.88626858855546,
+    "lon": 139.9445343017578
+  },
+  "corners": {
+    "top_left": {
+      "lat": 35.88626858855546,
+      "lon": 139.9445343017578
+    },
+    "top_right": {
+      "lat": 35.88626858855546,
+      "lon": 140.42518615722656
+    },
+    "bottom_left": {
+      "lat": 35.57412411048198,
+      "lon": 139.9445343017578
+    },
+    "bottom_right": {
+      "lat": 35.57412411048198,
+      "lon": 140.42518615722656
+    }
+  },
+  "corner_convention": "outer pixel edges; bottom_right is (width,height)",
+  "requested_bounds": {
+    "north": 35.84,
+    "south": 35.62,
+    "west": 140.03,
+    "east": 140.34
+  },
+  "source": "地理院タイル（淡色地図）",
+  "source_url": "https://maps.gsi.go.jp/development/ichiran.html#pale",
+  "tile_template": "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png",
+  "attribution": "出典：地理院タイル",
+  "credit_strip_height": 21,
+  "resampled": false,
+  "tiles": [
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/11/1820/805.png",
+      "fetched_at": "2026-10-29T04:14:30.939028+09:00",
+      "status": 200,
+      "bytes": 53629,
+      "x": 1820,
+      "y": 805
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/11/1821/805.png",
+      "fetched_at": "2026-10-29T04:14:31.043010+09:00",
+      "status": 200,
+      "bytes": 53850,
+      "x": 1821,
+      "y": 805
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/11/1822/805.png",
+      "fetched_at": "2026-10-29T04:14:31.116717+09:00",
+      "status": 200,
+      "bytes": 48470,
+      "x": 1822,
+      "y": 805
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/11/1820/806.png",
+      "fetched_at": "2026-10-29T04:14:31.198725+09:00",
+      "status": 200,
+      "bytes": 49522,
+      "x": 1820,
+      "y": 806
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/11/1821/806.png",
+      "fetched_at": "2026-10-29T04:14:31.275524+09:00",
+      "status": 200,
+      "bytes": 57142,
+      "x": 1821,
+      "y": 806
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/11/1822/806.png",
+      "fetched_at": "2026-10-29T04:14:31.332591+09:00",
+      "status": 200,
+      "bytes": 46671,
+      "x": 1822,
+      "y": 806
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/11/1820/807.png",
+      "fetched_at": "2026-10-29T04:14:31.419090+09:00",
+      "status": 200,
+      "bytes": 21441,
+      "x": 1820,
+      "y": 807
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/11/1821/807.png",
+      "fetched_at": "2026-10-29T04:14:31.486234+09:00",
+      "status": 200,
+      "bytes": 53257,
+      "x": 1821,
+      "y": 807
+    },
+    {
+      "url": "https://cyberjapandata.gsi.go.jp/xyz/pale/11/1822/807.png",
+      "fetched_at": "2026-10-29T04:14:31.556360+09:00",
+      "status": 200,
+      "bytes": 51689,
+      "x": 1822,
+      "y": 807
+    }
+  ]
+}
