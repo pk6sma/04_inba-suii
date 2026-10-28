@@ -17,7 +17,27 @@
       "coord_matched_address": "千葉県栄町安食",
       "map_number": 5,
       "map_visible": true,
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "display_order": 1,
+      "label_offset_px": [
+        0,
+        -22
+      ],
+      "px": [
+        980,
+        160
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "nagato",
@@ -35,7 +55,27 @@
       "coord_note": "ユーザー指定の緯度経度へ修正し、全件確定の指示により確定。coord_sourceは初回検索記録",
       "map_number": 6,
       "map_visible": true,
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "display_order": 2,
+      "label_offset_px": [
+        18,
+        14
+      ],
+      "px": [
+        1198,
+        308
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "hatori",
@@ -54,7 +94,27 @@
       "coord_matched_address": "千葉県佐倉市羽鳥",
       "map_number": 4,
       "map_visible": true,
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "display_order": 6,
+      "label_offset_px": [
+        0,
+        0
+      ],
+      "px": [
+        930,
+        700
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "amado",
@@ -73,7 +133,27 @@
       "coord_matched_address": "千葉県千葉市花見川区天戸町",
       "map_number": 7,
       "map_visible": true,
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "display_order": 8,
+      "label_offset_px": [
+        -4,
+        -20
+      ],
+      "px": [
+        300,
+        780
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "kemigawa",
@@ -92,7 +172,27 @@
       "coord_matched_address": "千葉県千葉市花見川区検見川町",
       "map_number": 8,
       "map_visible": true,
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "display_order": 9,
+      "label_offset_px": [
+        0,
+        0
+      ],
+      "px": [
+        220,
+        925
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "inba_average",
@@ -107,7 +207,23 @@
       "coord_status": "missing",
       "map_number": null,
       "map_visible": false,
-      "coord_note": "平均値のため地図対象外"
+      "coord_note": "平均値のため地図対象外",
+      "display_order": 4,
+      "label_offset_px": [
+        0,
+        0
+      ],
+      "px": null,
+      "px_status": "not_applicable",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "背景を見た仮配置。lat/lonから変換せず、承認待ち"
+      }
     },
     {
       "id": "yoshitaka_aux",
@@ -122,7 +238,23 @@
       "coord_status": "missing",
       "map_number": null,
       "map_visible": false,
-      "coord_note": "水文状況図の補助値。県の観測地点とは同一座標と推定せず地図の独立表示対象外"
+      "coord_note": "水文状況図の補助値。県の観測地点とは同一座標と推定せず地図の独立表示対象外",
+      "display_order": null,
+      "label_offset_px": [
+        0,
+        0
+      ],
+      "px": null,
+      "px_status": "not_applicable",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "背景を見た仮配置。lat/lonから変換せず、承認待ち"
+      }
     },
     {
       "id": "usui_aux",
@@ -137,7 +269,23 @@
       "coord_status": "missing",
       "map_number": null,
       "map_visible": false,
-      "coord_note": "水文状況図の補助値。県の観測地点とは同一座標と推定せず地図の独立表示対象外"
+      "coord_note": "水文状況図の補助値。県の観測地点とは同一座標と推定せず地図の独立表示対象外",
+      "display_order": null,
+      "label_offset_px": [
+        0,
+        0
+      ],
+      "px": null,
+      "px_status": "not_applicable",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "背景を見た仮配置。lat/lonから変換せず、承認待ち"
+      }
     },
     {
       "id": "kaburagi",
@@ -157,7 +305,27 @@
       "coord_matched_address": "千葉県佐倉市表町三丁目１７番",
       "map_number": 1,
       "map_visible": true,
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "display_order": 7,
+      "label_offset_px": [
+        0,
+        0
+      ],
+      "px": [
+        1030,
+        807
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "kitainba",
@@ -177,7 +345,27 @@
       "coord_matched_address": "千葉県印西市吉高",
       "map_number": 3,
       "map_visible": true,
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "display_order": 3,
+      "label_offset_px": [
+        0,
+        0
+      ],
+      "px": [
+        1020,
+        420
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "nishiinba",
@@ -197,7 +385,27 @@
       "coord_matched_address": "千葉県佐倉市臼井",
       "map_number": 2,
       "map_visible": true,
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "display_order": 5,
+      "label_offset_px": [
+        0,
+        0
+      ],
+      "px": [
+        680,
+        545
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     }
   ],
   "mismatch_pairs": [

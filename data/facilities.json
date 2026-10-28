@@ -13,7 +13,22 @@
       "coord_query": "千葉県印旛郡栄町安食",
       "coord_note": "ユーザー指定の緯度経度へ修正し、全件確定の指示により確定。coord_sourceは初回検索記録",
       "coord_matched_address": "千葉県栄町安食",
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "px": [
+        1174,
+        193
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "inba_kijo",
@@ -28,7 +43,22 @@
       "coord_query": "千葉県印旛郡栄町安食",
       "coord_note": "ユーザー指定の緯度経度へ修正し、全件確定の指示により確定。coord_sourceは初回検索記録",
       "coord_matched_address": "千葉県栄町安食",
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "px": [
+        1205,
+        210
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "sakanao_suimon",
@@ -43,7 +73,22 @@
       "coord_query": "千葉県印旛郡栄町酒直",
       "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県栄町酒直",
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "px": [
+        1150,
+        350
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "sakanao_kijo",
@@ -58,7 +103,22 @@
       "coord_query": "千葉県印旛郡栄町酒直",
       "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県栄町酒直",
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "px": [
+        1175,
+        372
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "owada_kijo",
@@ -73,7 +133,22 @@
       "coord_query": "千葉県八千代市村上",
       "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県八千代市村上",
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "px": [
+        270,
+        550
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "amado_gate",
@@ -88,7 +163,22 @@
       "coord_query": "千葉県千葉市花見川区天戸町",
       "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県千葉市花見川区天戸町",
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "px": [
+        302,
+        740
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     },
     {
       "id": "nagasaku_gate",
@@ -103,7 +193,22 @@
       "coord_query": "千葉県千葉市花見川区長作町",
       "coord_note": "ユーザーの承認により候補座標を変更せず確定。7は全件confirmedの指示に含む",
       "coord_matched_address": "千葉県千葉市花見川区長作町",
-      "coord_confirmation_source": "data/coordinate_approval.json"
+      "coord_confirmation_source": "data/coordinate_approval.json",
+      "px": [
+        260,
+        885
+      ],
+      "px_status": "confirmed",
+      "px_basis": {
+        "image": "assets/basemap_schematic.png",
+        "size": [
+          1402,
+          1122
+        ],
+        "origin": "top-left",
+        "note": "ユーザー承認済みの模式図ピクセル位置。lat/lonからの変換なし"
+      },
+      "px_confirmation_source": "data/schematic_approval.json"
     }
   ]
 }

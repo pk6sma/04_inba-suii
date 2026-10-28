@@ -1,0 +1,23 @@
+[
+  {
+    "file": "NotoSansJP-Regular.otf",
+    "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Regular.otf",
+    "bytes": 4533028,
+    "sha256": "dff723ba59d57d136764a04b9b2d03205544f7cd785a711442d6d2d085ac5073",
+    "fetched_at": "2026-10-29T04:36:48.211432+09:00"
+  },
+  {
+    "file": "NotoSansJP-Bold.otf",
+    "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/SubsetOTF/JP/NotoSansJP-Bold.otf",
+    "bytes": 4656448,
+    "sha256": "1b0edfb500b73a4fa8a4fcaae1bbbd403994e08e73e3e0da37e70d3853f42c5f",
+    "fetched_at": "2026-10-29T04:36:48.891108+09:00"
+  },
+  {
+    "file": "LICENSE",
+    "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/LICENSE",
+    "bytes": 4301,
+    "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+    "fetched_at": "2026-10-29T04:36:49.105068+09:00"
+  }
+]
