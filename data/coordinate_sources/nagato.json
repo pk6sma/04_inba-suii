@@ -1,0 +1,142 @@
+{
+  "query": "長門川",
+  "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%95%B7%E9%96%80%E5%B7%9D",
+  "fetched_at": "2026-10-29T04:15:28.075316+09:00",
+  "status": 200,
+  "response": [
+    {
+      "geometry": {
+        "coordinates": [
+          131.182617,
+          34.37056
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "",
+        "title": "山口県長門市"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          140.24779215338,
+          35.8274730689219
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "12329",
+        "title": "旧長門川",
+        "dataSource": "4"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          140.251756047328,
+          35.809643108162
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "12329",
+        "title": "長門川",
+        "dataSource": "4"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          135.63278,
+          34.661962
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "27227",
+        "title": "長門川",
+        "dataSource": "4"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          135.636713809722,
+          34.6536285880556
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "27227",
+        "title": "長門川",
+        "dataSource": "1"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          140.236081722222,
+          35.84790575
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "12329",
+        "title": "長門川",
+        "dataSource": "1"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          140.242723777778,
+          35.8250338055556
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "12231",
+        "title": "旧長門川",
+        "dataSource": "1"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          140.245613453333,
+          35.8292586402778
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "12329",
+        "title": "長門川",
+        "dataSource": "1"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          140.250783333333,
+          35.8244978333333
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "12329",
+        "title": "長門川",
+        "dataSource": "1"
+      }
+    }
+  ]
+}

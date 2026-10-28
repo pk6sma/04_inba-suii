@@ -7,7 +7,16 @@
       "order": 1,
       "latitude": null,
       "longitude": null,
-      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
+      "lat": 35.829739,
+      "lon": 140.246262,
+      "coord_status": "candidate",
+      "coord_source": "data/coordinate_sources/ajiki.json",
+      "coord_query": "千葉県印旛郡栄町安食",
+      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_matched_address": "千葉県栄町安食",
+      "map_number": 5,
+      "map_visible": true
     },
     {
       "id": "nagato",
@@ -16,7 +25,15 @@
       "order": 2,
       "latitude": null,
       "longitude": null,
-      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
+      "lat": null,
+      "lon": null,
+      "coord_status": "missing",
+      "coord_source": "data/coordinate_sources/nagato.json",
+      "coord_query": "長門川",
+      "coord_note": "結果なし、または複数候補を一意に選べないため未取得",
+      "map_number": 6,
+      "map_visible": true
     },
     {
       "id": "hatori",
@@ -25,7 +42,16 @@
       "order": 3,
       "latitude": null,
       "longitude": null,
-      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
+      "lat": 35.709606,
+      "lon": 140.201492,
+      "coord_status": "candidate",
+      "coord_source": "data/coordinate_sources/hatori.json",
+      "coord_query": "千葉県佐倉市羽鳥",
+      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_matched_address": "千葉県佐倉市羽鳥",
+      "map_number": 4,
+      "map_visible": true
     },
     {
       "id": "amado",
@@ -34,7 +60,16 @@
       "order": 4,
       "latitude": null,
       "longitude": null,
-      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
+      "lat": 35.679436,
+      "lon": 140.090439,
+      "coord_status": "candidate",
+      "coord_source": "data/coordinate_sources/amado.json",
+      "coord_query": "千葉県千葉市花見川区天戸町",
+      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_matched_address": "千葉県千葉市花見川区天戸町",
+      "map_number": 7,
+      "map_visible": true
     },
     {
       "id": "kemigawa",
@@ -43,7 +78,16 @@
       "order": 5,
       "latitude": null,
       "longitude": null,
-      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
+      "lat": 35.653198,
+      "lon": 140.065796,
+      "coord_status": "candidate",
+      "coord_source": "data/coordinate_sources/kemigawa.json",
+      "coord_query": "千葉県千葉市花見川区検見川町",
+      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_matched_address": "千葉県千葉市花見川区検見川町",
+      "map_number": 8,
+      "map_visible": true
     },
     {
       "id": "inba_average",
@@ -52,7 +96,13 @@
       "order": 6,
       "latitude": null,
       "longitude": null,
-      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
+      "lat": null,
+      "lon": null,
+      "coord_status": "missing",
+      "map_number": null,
+      "map_visible": false,
+      "coord_note": "平均値のため地図対象外"
     },
     {
       "id": "yoshitaka_aux",
@@ -61,7 +111,13 @@
       "order": 7,
       "latitude": null,
       "longitude": null,
-      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
+      "lat": null,
+      "lon": null,
+      "coord_status": "missing",
+      "map_number": null,
+      "map_visible": false,
+      "coord_note": "水文状況図の補助値。県の観測地点とは同一座標と推定せず地図の独立表示対象外"
     },
     {
       "id": "usui_aux",
@@ -70,7 +126,13 @@
       "order": 8,
       "latitude": null,
       "longitude": null,
-      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html"
+      "source_url": "https://mizukan.sakura.ne.jp/suii/no010121.html",
+      "lat": null,
+      "lon": null,
+      "coord_status": "missing",
+      "map_number": null,
+      "map_visible": false,
+      "coord_note": "水文状況図の補助値。県の観測地点とは同一座標と推定せず地図の独立表示対象外"
     },
     {
       "id": "kaburagi",
@@ -80,7 +142,16 @@
       "match_name": "鏑木橋",
       "latitude": null,
       "longitude": null,
-      "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html"
+      "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html",
+      "lat": 35.712799,
+      "lon": 140.22998,
+      "coord_status": "candidate",
+      "coord_source": "data/coordinate_sources/kaburagi.json",
+      "coord_query": "千葉県佐倉市表町3-17-1",
+      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_matched_address": "千葉県佐倉市表町三丁目１７番",
+      "map_number": 1,
+      "map_visible": true
     },
     {
       "id": "kitainba",
@@ -90,7 +161,16 @@
       "match_name": "北印旛沼",
       "latitude": null,
       "longitude": null,
-      "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html"
+      "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html",
+      "lat": 35.79121,
+      "lon": 140.235336,
+      "coord_status": "candidate",
+      "coord_source": "data/coordinate_sources/kitainba.json",
+      "coord_query": "千葉県印西市吉高",
+      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_matched_address": "千葉県印西市吉高",
+      "map_number": 3,
+      "map_visible": true
     },
     {
       "id": "nishiinba",
@@ -100,7 +180,16 @@
       "match_name": "西印旛沼",
       "latitude": null,
       "longitude": null,
-      "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html"
+      "source_url": "http://suibo.bousai.pref.chiba.lg.jp/mobile/river/status_3_1_0.html",
+      "lat": 35.73074,
+      "lon": 140.190536,
+      "coord_status": "candidate",
+      "coord_source": "data/coordinate_sources/nishiinba.json",
+      "coord_query": "千葉県佐倉市臼井字遠部下",
+      "coord_note": "住所検索の代表点。観測所・施設の実位置は未確認",
+      "coord_matched_address": "千葉県佐倉市臼井",
+      "map_number": 2,
+      "map_visible": true
     }
   ],
   "mismatch_pairs": [

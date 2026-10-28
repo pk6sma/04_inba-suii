@@ -1,0 +1,22 @@
+{
+  "query": "千葉県千葉市花見川区検見川町",
+  "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%8D%83%E8%91%89%E7%9C%8C%E5%8D%83%E8%91%89%E5%B8%82%E8%8A%B1%E8%A6%8B%E5%B7%9D%E5%8C%BA%E6%A4%9C%E8%A6%8B%E5%B7%9D%E7%94%BA",
+  "fetched_at": "2026-10-29T04:15:28.299658+09:00",
+  "status": 200,
+  "response": [
+    {
+      "geometry": {
+        "coordinates": [
+          140.065796,
+          35.653198
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "",
+        "title": "千葉県千葉市花見川区検見川町"
+      }
+    }
+  ]
+}

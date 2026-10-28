@@ -1,0 +1,22 @@
+{
+  "query": "千葉県印西市吉高",
+  "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%8D%83%E8%91%89%E7%9C%8C%E5%8D%B0%E8%A5%BF%E5%B8%82%E5%90%89%E9%AB%98",
+  "fetched_at": "2026-10-29T04:15:27.767009+09:00",
+  "status": 200,
+  "response": [
+    {
+      "geometry": {
+        "coordinates": [
+          140.235336,
+          35.79121
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "",
+        "title": "千葉県印西市吉高"
+      }
+    }
+  ]
+}

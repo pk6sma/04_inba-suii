@@ -1,0 +1,22 @@
+{
+  "query": "千葉県佐倉市表町3-17-1",
+  "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%8D%83%E8%91%89%E7%9C%8C%E4%BD%90%E5%80%89%E5%B8%82%E8%A1%A8%E7%94%BA3-17-1",
+  "fetched_at": "2026-10-29T04:15:27.521644+09:00",
+  "status": 200,
+  "response": [
+    {
+      "geometry": {
+        "coordinates": [
+          140.22998,
+          35.712799
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "addressCode": "",
+        "title": "千葉県佐倉市表町三丁目１７番"
+      }
+    }
+  ]
+}
