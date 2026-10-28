@@ -1,0 +1,247 @@
+{
+  "generated_at": "2026-10-29T04:04:54.639362+09:00",
+  "sources": {
+    "mizukan": {
+      "observed_at": "2026-10-29T04:00:00+09:00",
+      "fetched_at": "2026-10-29T04:04:54.325807+09:00",
+      "status": "ok",
+      "encoding": "shift_jis",
+      "response_bytes": 4129,
+      "http_status": 200
+    },
+    "chiba_suibo": {
+      "observed_at": "2026-10-29T03:50:00+09:00",
+      "observed_date_inferred": true,
+      "fetched_at": "2026-10-29T04:04:54.622339+09:00",
+      "status": "ok",
+      "encoding": "shift_jis",
+      "response_bytes": 2414,
+      "http_status": 200,
+      "stale_suspect": false
+    }
+  },
+  "stations": [
+    {
+      "id": "ajiki",
+      "name": "利根川｜安食",
+      "source": "mizukan",
+      "level_m": 0.9,
+      "status": "ok",
+      "observed_at": "2026-10-29T04:00:00+09:00",
+      "water_icon": "ico_010121_suii_1_1.gif",
+      "water_icon_code": "1_1",
+      "level": "no_threshold",
+      "trend": null,
+      "delta_1h": null
+    },
+    {
+      "id": "nagato",
+      "name": "長門川",
+      "source": "mizukan",
+      "level_m": 0.96,
+      "status": "ok",
+      "observed_at": "2026-10-29T04:00:00+09:00",
+      "water_icon": "ico_010121_suii_1_1.gif",
+      "water_icon_code": "1_1",
+      "level": "no_threshold",
+      "trend": null,
+      "delta_1h": null
+    },
+    {
+      "id": "hatori",
+      "name": "鹿島川｜羽鳥",
+      "source": "mizukan",
+      "level_m": 2.15,
+      "status": "ok",
+      "observed_at": "2026-10-29T04:00:00+09:00",
+      "water_icon": "ico_010121_suii_1_2.gif",
+      "water_icon_code": "1_2",
+      "level": "no_threshold",
+      "trend": null,
+      "delta_1h": null
+    },
+    {
+      "id": "amado",
+      "name": "花見川｜天戸",
+      "source": "mizukan",
+      "level_m": 4.25,
+      "status": "ok",
+      "observed_at": "2026-10-29T04:00:00+09:00",
+      "water_icon": "ico_010121_suii_1_2.gif",
+      "water_icon_code": "1_2",
+      "level": "no_threshold",
+      "trend": null,
+      "delta_1h": null
+    },
+    {
+      "id": "kemigawa",
+      "name": "花見川｜検見川",
+      "source": "mizukan",
+      "level_m": 0.53,
+      "status": "ok",
+      "observed_at": "2026-10-29T04:00:00+09:00",
+      "water_icon": "ico_010121_suii_1_2.gif",
+      "water_icon_code": "1_2",
+      "level": "no_threshold",
+      "trend": null,
+      "delta_1h": null
+    },
+    {
+      "id": "inba_average",
+      "name": "印旛沼平均",
+      "source": "mizukan",
+      "level_m": 2.03,
+      "status": "ok",
+      "observed_at": "2026-10-29T04:00:00+09:00",
+      "water_icon": "ico_010121_suii_0_1.gif",
+      "water_icon_code": "0_1",
+      "level": "no_threshold",
+      "trend": null,
+      "delta_1h": null
+    },
+    {
+      "id": "yoshitaka_aux",
+      "name": "北印旛沼｜吉高（補助値）",
+      "source": "mizukan",
+      "level_m": 2.0,
+      "status": "ok",
+      "observed_at": "2026-10-29T04:00:00+09:00",
+      "water_icon": "ico_010121_suii_1_2.gif",
+      "water_icon_code": "1_2",
+      "level": "no_threshold",
+      "trend": null,
+      "delta_1h": null
+    },
+    {
+      "id": "usui_aux",
+      "name": "西印旛沼｜臼井（補助値）",
+      "source": "mizukan",
+      "level_m": 2.07,
+      "status": "ok",
+      "observed_at": "2026-10-29T04:00:00+09:00",
+      "water_icon": "ico_010121_suii_1_2.gif",
+      "water_icon_code": "1_2",
+      "level": "no_threshold",
+      "trend": null,
+      "delta_1h": null
+    },
+    {
+      "id": "kaburagi",
+      "name": "高崎川｜鏑木橋",
+      "source": "chiba_suibo",
+      "level_m": 4.05,
+      "status": "ok",
+      "observed_at": "2026-10-29T03:50:00+09:00",
+      "observed_date_inferred": true,
+      "fetched_at": "2026-10-29T04:04:54.622339+09:00",
+      "stale_suspect": false,
+      "level": "caution",
+      "trend": "up",
+      "delta_1h": 0.62
+    },
+    {
+      "id": "kitainba",
+      "name": "北印旛沼",
+      "source": "chiba_suibo",
+      "level_m": 2.0,
+      "status": "ok",
+      "observed_at": "2026-10-29T03:50:00+09:00",
+      "observed_date_inferred": true,
+      "fetched_at": "2026-10-29T04:04:54.622339+09:00",
+      "stale_suspect": false,
+      "level": "normal",
+      "trend": null,
+      "delta_1h": null
+    },
+    {
+      "id": "nishiinba",
+      "name": "西印旛沼",
+      "source": "chiba_suibo",
+      "level_m": 2.03,
+      "status": "ok",
+      "observed_at": "2026-10-29T03:50:00+09:00",
+      "observed_date_inferred": true,
+      "fetched_at": "2026-10-29T04:04:54.622339+09:00",
+      "stale_suspect": false,
+      "level": "normal",
+      "trend": null,
+      "delta_1h": null
+    }
+  ],
+  "facilities": [
+    {
+      "id": "facility_1",
+      "name": "施設1（文書順）",
+      "order": 1,
+      "icon": "ico_010121_kijou_0_1.gif",
+      "state": "unknown"
+    },
+    {
+      "id": "facility_2",
+      "name": "施設2（文書順）",
+      "order": 2,
+      "icon": "ico_010121_kijou_2_2.gif",
+      "state": "unknown"
+    },
+    {
+      "id": "facility_3",
+      "name": "施設3（文書順）",
+      "order": 3,
+      "icon": "ico_010121_kijou_0_0.gif",
+      "state": "unknown"
+    },
+    {
+      "id": "facility_4",
+      "name": "施設4（文書順）",
+      "order": 4,
+      "icon": "ico_010121_kijou_2_1.gif",
+      "state": "unknown"
+    },
+    {
+      "id": "facility_5",
+      "name": "施設5（文書順）",
+      "order": 5,
+      "icon": "ico_010121_kijou_0_1.gif",
+      "state": "unknown"
+    },
+    {
+      "id": "facility_6",
+      "name": "施設6（文書順）",
+      "order": 6,
+      "icon": "ico_010121_kijou_1_1.gif",
+      "state": "unknown"
+    },
+    {
+      "id": "facility_7",
+      "name": "施設7（文書順）",
+      "order": 7,
+      "icon": "ico_010121_kijou_1_1.gif",
+      "state": "unknown"
+    }
+  ],
+  "summary": {
+    "with_threshold": 3,
+    "all_below": false,
+    "fetched": 11,
+    "failed": 0,
+    "stale": 0
+  },
+  "events": [
+    {
+      "station_id": "kaburagi",
+      "direction": "up",
+      "old_level": "standby",
+      "new_level": "caution",
+      "crossed_thresholds": [
+        {
+          "name": "はん濫注意水位",
+          "level": "caution",
+          "value": 4.0
+        }
+      ],
+      "suppressed_thresholds": [],
+      "occurred_at": "2026-10-29T04:04:54.639362+09:00",
+      "observed_at": "2026-10-29T03:50:00+09:00"
+    }
+  ]
+}

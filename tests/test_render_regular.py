@@ -43,8 +43,7 @@ def test_null_summary_cannot_claim_below():
     latest = fixture()
     latest["summary"]["all_below"] = None
     assert sponsor_visible(latest,"regular") is False
-    with pytest.raises(ValueError):
-        regular_badge(latest)
+    assert "すべて基準未満" not in regular_badge(latest)
 
 
 def test_unconfirmed_coordinate_blocks_regular_card(monkeypatch,tmp_path):

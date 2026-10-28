@@ -1,12 +1,16 @@
-"""Offline card rendering. Stage 3 step 1: regular preview only, pending approval."""
+"""Offline regular/event cards from latest.json and approved schematic pixels."""
 import argparse
 import json
-from datetime import datetime
+import re
+import shutil
+from datetime import datetime, timedelta, time
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 from schematic_geometry import schematic_pixel
+from sources.common import JST
+from judge import RANK
 
 ROOT = Path(__file__).resolve().parent
 NAVY, BLUE, LIGHT, GRAY = "#0B2545", "#1F5FBF", "#63B3ED", "#718096"
@@ -30,14 +34,42 @@ def fit(draw, text, size, width, bold=False, root=ROOT):
     raise ValueError("Text does not fit allotted card area")
 
 
+def level_style(level):
+    if level in ("danger","design"):
+        return "#C53030","#FFF5F5"
+    if level in ("standby","caution"):
+        return "#B7791F","#FFF8E1"
+    return BLUE,"#F2F8FF"
+
+
+def badge_info(latest, display, thresholds):
+    by_id={s["id"]:s for s in latest["stations"]}
+    rows=[by_id.get(d["id"], {"id":d["id"],"status":"fetch_failed","level":None}) for d in display]
+    missing=sum(r["status"] != "ok" for r in rows)
+    alerts=[r for r in rows if r["status"]=="ok" and RANK.get(r.get("level"),0)>0]
+    if alerts:
+        highest=max(alerts,key=lambda r:RANK[r["level"]])
+        definition=next(d for d in display if d["id"]==highest["id"])
+        threshold=next(b["name"] for b in thresholds[highest["id"]]["boundaries"] if b["level"]==highest["level"])
+        detail=f"{threshold}を超過"
+        if len(alerts)>1: detail+=f" ほか{len(alerts)-1}地点"
+        if missing: detail+=f"／未取得{missing}地点"
+        color,bg=level_style(highest["level"])
+        return {"text":definition["name"]+" "+detail,"lines":[definition["name"],detail],
+                "color":color,"background":bg,"available":len(rows)-missing,"missing":missing}
+    if missing or latest["summary"]["all_below"] is not True:
+        label=f"確認済み{len(rows)-missing}地点／未取得{missing}地点"
+        return {"text":label,"lines":[label],"color":GRAY,"background":"#F7FAFC",
+                "available":len(rows)-missing,"missing":missing}
+    label=f'基準あり{latest["summary"]["with_threshold"]}地点 すべて基準未満'
+    return {"text":label,"lines":[label],"color":BLUE,"background":"#F2F8FF",
+            "available":len(rows),"missing":0}
+
+
 def regular_badge(latest):
-    # Other conditions deliberately stop until the regular design is approved.
-    summary = latest["summary"]
-    if (summary["all_below"] is not True or summary["failed"] or summary.get("stale", 0)
-            or any(s["status"] != "ok" or s["level"] not in ("normal", "no_threshold")
-                   for s in latest["stations"])):
-        raise ValueError("Only fully available normal regular preview is implemented at this approval stage")
-    return f'基準あり{summary["with_threshold"]}地点 すべて基準未満'
+    config=read_json(ROOT/"data/stations.json")["stations"]
+    display=[s for s in config if s.get("display_order") is not None]
+    return badge_info(latest,display,read_json(ROOT/"data/thresholds.json"))["text"]
 
 
 def sponsor_visible(latest, kind):
@@ -50,17 +82,18 @@ def sponsor_visible(latest, kind):
 
 def render(latest, output, kind="regular", root=ROOT):
     root, output = Path(root), Path(output)
-    if kind != "regular":
-        raise ValueError("Event layout awaits regular-card approval")
-    badge = regular_badge(latest)
+    if kind not in ("regular","event"):
+        raise ValueError("Unknown card kind")
     definitions = read_json(root / "data/stations.json")["stations"]
     display = sorted([s for s in definitions if s.get("display_order") is not None],
                      key=lambda s: s["display_order"])
     if len(display) != 9:
         raise ValueError("Expected nine display rows")
+    badge=badge_info(latest,display,read_json(root/"data/thresholds.json"))
+    event_ids={e["station_id"] for e in latest["events"]} if kind=="event" else set()
     by_id = {s["id"]: s for s in latest["stations"]}
-    if any(s["id"] not in by_id for s in display):
-        raise ValueError("Required display station is missing")
+    for s in display:
+        by_id.setdefault(s["id"], {"id":s["id"],"status":"fetch_failed","level_m":None,"level":None,"delta_1h":None})
     facilities = read_json(root / "data/facilities.json")["facilities"]
     mapped = [s for s in display if s.get("map_visible")]
     with Image.open(root / "assets/basemap_schematic.png") as im:
@@ -80,9 +113,14 @@ def render(latest, output, kind="regular", root=ROOT):
     text(12, 8, "印旛沼の水位情報", 44, bold=True, max_width=440)
     text(465, 13, "佐倉・印西・成田・八千代・栄・", 12)
     text(465, 34, "千葉市花見川区", 12)
-    draw.rounded_rectangle((726,7,1028,59),radius=8,fill="#F2F8FF",outline=BLUE,width=1)
-    text(737,15,badge,18,BLUE,True,max_width=281)
-    text(1017,43,"9地点観測中",11,BLUE,anchor="rt")
+    draw.rounded_rectangle((726,7,1028,59),radius=8,fill=badge["background"],outline=badge["color"],width=1)
+    for i,line in enumerate(badge["lines"]):
+        text(737,12+i*23 if len(badge["lines"])>1 else 15,line,17 if len(badge["lines"])>1 else 18,
+             badge["color"],True,max_width=281)
+    if len(badge["lines"])>1:
+        text(706,49,"9地点観測中",10,BLUE,anchor="rt")
+    else:
+        text(1017,43,"9地点観測中",11,BLUE,anchor="rt")
     stamp = datetime.fromisoformat(latest["generated_at"])
     weekday = "月火水木金土日"[stamp.weekday()]
     text(1190,7,f"{stamp:%Y/%m/%d}（{weekday}）",13,bold=True,anchor="rt")
@@ -95,19 +133,27 @@ def render(latest, output, kind="regular", root=ROOT):
     for facility in facilities:
         px,py = positions[facility["id"]]
         x,y = map_x+px,map_y+py
+        # Match only an explicit stable ID. Never guess a source icon order.
+        state=next((f["state"] for f in latest["facilities"] if f["id"]==facility.get("source_id",facility["id"])),"unknown")
+        facility_color={"排水中":"#C53030","停止":"#2F855A","揚水中":"#B7791F",
+                        "故障":"#718096","欠測":"#718096","故障・欠測":"#718096"}.get(state,GRAY)
         if "機場" in facility["name"]:
-            draw.polygon([(x-5,y-6),(x+5,y-6),(x+8,y+6),(x-8,y+6)],fill=GRAY,outline="white")
+            draw.polygon([(x-5,y-6),(x+5,y-6),(x+8,y+6),(x-8,y+6)],fill=facility_color,outline="white")
         else:
-            draw.rectangle((x-6,y-6,x+6,y+6),fill=GRAY,outline="white")
+            draw.rectangle((x-6,y-6,x+6,y+6),fill=facility_color,outline="white")
     for station in mapped:
         px,py = positions[station["id"]]
-        dx,dy = (0,0)  # px is the complete approved schematic marker position
+        dx,dy = station.get("label_offset_px",[0,0])
+        row=by_id[station["id"]]
+        active=row["status"]=="ok" and (RANK.get(row.get("level"),0)>0 or station["id"] in event_ids)
+        radius=22 if active else 17
+        color=level_style(row.get("level"))[0] if row["status"]=="ok" else GRAY
         x,y = map_x+px+dx,map_y+py+dy
-        if not (17 <= px+dx < 683 and 17 <= py+dy < 539):
+        if not (radius <= px+dx < 700-radius and radius <= py+dy < 539-radius):
             raise ValueError("Explicit marker offset puts marker outside map area")
-        if dx or dy:
-            draw.line((map_x+px,map_y+py,x,y),fill=BLUE,width=1)
-        draw.ellipse((x-17,y-17,x+17,y+17),fill=BLUE,outline="white",width=2)
+        if max(abs(dx),abs(dy))>17:
+            draw.line((map_x+px,map_y+py,x,y),fill=color,width=1)
+        draw.ellipse((x-radius,y-radius,x+radius,y+radius),fill=color,outline="white",width=2)
         text(x,y,str(station["display_order"]),21,"white",True,anchor="mm")
     # Facility legend and schematic notice. No GSI attribution for this background.
     draw.rectangle((map_x,map_y+539,map_x+699,map_y+559),fill="white")
@@ -118,19 +164,33 @@ def render(latest, output, kind="regular", root=ROOT):
     for index, definition in enumerate(display):
         row = by_id[definition["id"]]
         y = 71 + index*53
-        draw.rounded_rectangle((726,y,1188,y+50),radius=8,outline="#D7E6F5",width=1,fill="#FBFDFF")
+        missing=row["status"]!="ok"
+        warning=not missing and RANK.get(row.get("level"),0)>0
+        active=warning or (not missing and row["id"] in event_ids)
+        color,bg=level_style(row.get("level"))
+        if missing: color,bg=GRAY,"#F7FAFC"
+        draw.rounded_rectangle((726,y,1188,y+50),radius=8,outline=color if active else "#D7E6F5",
+                               width=2 if active else 1,fill=bg if active or missing else "#FBFDFF")
         number = str(definition["display_order"])
-        draw.ellipse((737,y+8,771,y+42),fill=BLUE)
+        draw.ellipse((737,y+8,771,y+42),fill=color)
         text(754,y+25,number,21,"white",True,anchor="mm")
-        text(785,y+15,definition["name"],21,bold=True,max_width=225)
-        text(1146,y+8,f'{row["level_m"]:.2f}',33,BLUE,True,anchor="rt")
-        text(1176,y+25,"m",17,BLUE,True,anchor="rt")
+        delta=row.get("delta_1h") if warning else None
+        text(785,y+15,definition["name"],21,bold=True,max_width=160 if delta is not None else 225)
+        if missing:
+            text(1176,y+15,"未取得",22,GRAY,True,anchor="rt")
+        elif delta is not None:
+            text(1035,y+14,f'{row["level_m"]:.2f}m',25,color,True,anchor="rt")
+            text(1045,y+20,f'{delta:+.2f}m（1時間前比）',11,color,max_width=132)
+        else:
+            text(1146,y+8,f'{row["level_m"]:.2f}',33,color,True,anchor="rt")
+            text(1176,y+25,"m",17,color,True,anchor="rt")
 
     # Source times and regular-only sponsor.
     sources = latest["sources"]
     for index, (source,label) in enumerate((("mizukan","印旛沼水位情報"),("chiba_suibo","千葉県 雨量・水位情報"))):
-        observed = datetime.fromisoformat(sources[source]["observed_at"])
-        text(735,555+index*17,f"{label}  観測 {observed:%m/%d %H:%M}",11,GRAY)
+        value=sources.get(source,{}).get("observed_at")
+        observed=datetime.fromisoformat(value).strftime("%m/%d %H:%M") if value else "未取得"
+        text(735,555+index*17,f"{label}  観測 {observed}",11,GRAY)
     show_sponsor = sponsor_visible(latest, kind)
     if show_sponsor:
         config = read_json(root / "config.json")["sponsor"]
@@ -153,19 +213,77 @@ def render(latest, output, kind="regular", root=ROOT):
     text(749,652,"千葉県 雨量・水位情報",11,"white")
     output.parent.mkdir(parents=True,exist_ok=True)
     card.save(output)
-    return {"output":str(output),"size":card.size,"badge":badge,"sponsor":show_sponsor}
+    return {"output":str(output),"size":card.size,"badge":badge["text"],"sponsor":show_sponsor}
+
+
+
+def cleanup_cards(folder, now):
+    """Delete only timestamp-named generated cards older than seven days."""
+    folder=Path(folder).resolve()
+    removed=[]
+    if not folder.exists(): return removed
+    for path in folder.iterdir():
+        match=re.fullmatch(r"(\d{8}-\d{4})-(regular|event)\.png",path.name)
+        if not match or path.is_symlink() or not path.is_file(): continue
+        stamp=datetime.strptime(match[1],"%Y%m%d-%H%M").replace(tzinfo=JST)
+        if now.astimezone(JST)-stamp>timedelta(days=7):
+            if path.resolve().parent != folder: raise ValueError("Unsafe cleanup path")
+            path.unlink()
+            removed.append(path.name)
+    return removed
+
+
+def scheduled_regular(now, previous):
+    local=now.astimezone(JST)
+    t=local.time().replace(tzinfo=None)
+    slot="morning" if time(6,50)<=t<time(12) else ("evening" if t>=time(18,50) else None)
+    if slot is None: return None
+    key=f"{local:%Y-%m-%d}-{slot}"
+    in_window=(time(6,50)<=t<time(7,1)) or (time(18,50)<=t<time(19,1))
+    return key if in_window or previous.get(slot)!=key else None
+
+
+def render_outputs(latest,root=ROOT):
+    root=Path(root)
+    now=datetime.fromisoformat(latest["generated_at"])
+    out=root/"out"
+    folder=out/"cards"
+    folder.mkdir(parents=True,exist_ok=True)
+    schedule_path=out/"card_schedule.json"
+    schedule=read_json(schedule_path) if schedule_path.exists() else {}
+    slot=scheduled_regular(now,schedule)
+    kinds=(["regular"] if slot else [])+(["event"] if latest["events"] else [])
+    cards={}
+    for kind in kinds:
+        path=folder/f"{now:%Y%m%d-%H%M}-{kind}.png"
+        render(latest,path,kind,root)
+        cards[kind]=path.relative_to(root).as_posix()
+        if kind=="regular":
+            shutil.copyfile(path,folder/"latest_regular.png")
+            schedule[slot.rsplit("-",1)[1]]=slot
+    from inba_watch import write_json
+    if slot: write_json(schedule_path,schedule)
+    cleanup_cards(folder,now)
+    manifest={"generated_at":latest["generated_at"],"cards":cards}
+    write_json(out/"card_manifest.json",manifest)
+    return manifest
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--latest",type=Path,default=ROOT/"out/latest.json")
-    parser.add_argument("--kind",choices=["regular"],default="regular")
+    parser.add_argument("--kind",choices=["regular","event"])
     parser.add_argument("--output",type=Path)
     args=parser.parse_args()
     latest=read_json(args.latest)
-    stamp=datetime.fromisoformat(latest["generated_at"])
-    output=args.output or ROOT/"out/cards"/f"{stamp:%Y%m%d-%H%M}-{args.kind}.png"
-    print(json.dumps(render(latest,output,args.kind),ensure_ascii=False,indent=2))
+    if args.kind or args.output:
+        kind=args.kind or "regular"
+        stamp=datetime.fromisoformat(latest["generated_at"])
+        output=args.output or ROOT/"out/cards"/f"{stamp:%Y%m%d-%H%M}-{kind}.png"
+        result=render(latest,output,kind)
+    else:
+        result=render_outputs(latest)
+    print(json.dumps(result,ensure_ascii=False,indent=2))
 
 
 if __name__ == "__main__":
