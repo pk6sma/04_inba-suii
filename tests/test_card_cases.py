@@ -78,14 +78,19 @@ def test_no_sponsor_for_event_even_after_recovery(tmp_path):
 
 
 @pytest.mark.parametrize("stamp,previous,expected",[
-    ("2026-10-29T06:49:00+09:00",{},None),
-    ("2026-10-29T06:50:00+09:00",{},None),
-    ("2026-10-29T07:00:00+09:00",{"morning":"2026-10-29-morning"},"2026-10-29-morning"),
-    ("2026-10-29T07:10:00+09:00",{},None),
-    ("2026-10-29T07:10:00+09:00",{"morning":"2026-10-29-morning"},None),
-    ("2026-10-29T18:50:00+09:00",{},None),
-    ("2026-10-29T19:00:00+09:00",{},"2026-10-29-evening"),
-    ("2026-10-29T10:00:00+00:00",{},"2026-10-29-evening")])
+    ("2026-10-29T06:49:59+09:00",{},None),
+    ("2026-10-29T06:50:00+09:00",{},"2026-10-29-morning"),
+    ("2026-10-29T07:00:00+09:00",{"morning":"2026-10-29-morning"},None),
+    ("2026-10-29T07:10:00+09:00",{},"2026-10-29-morning"),
+    ("2026-10-29T07:19:59+09:00",{},"2026-10-29-morning"),
+    ("2026-10-29T07:20:00+09:00",{},None),
+    ("2026-10-29T18:49:59+09:00",{},None),
+    ("2026-10-29T18:50:00+09:00",{},"2026-10-29-evening"),
+    ("2026-10-29T19:00:00+09:00",{"evening":"2026-10-29-evening"},None),
+    ("2026-10-29T19:19:59+09:00",{},"2026-10-29-evening"),
+    ("2026-10-29T19:20:00+09:00",{},None),
+    ("2026-10-29T10:00:00+00:00",{},"2026-10-29-evening"),
+    ("2026-10-30T06:50:00+09:00",{"morning":"2026-10-29-morning"},"2026-10-30-morning")])
 def test_regular_schedule(stamp,previous,expected):
     assert scheduled_regular(datetime.fromisoformat(stamp),previous)==expected
 
@@ -127,7 +132,7 @@ def test_facility_state_uses_saved_source_id(tmp_path):
         assert any(color == (197,48,48) for _,color in im.getcolors(maxcolors=1000000))
 
 
-@pytest.mark.parametrize("stamp",["2026-10-29T06:40:00+09:00","2026-10-29T12:10:00+09:00","2026-10-29T19:10:00+09:00"])
+@pytest.mark.parametrize("stamp",["2026-10-29T06:30:00+09:00","2026-10-29T12:10:00+09:00","2026-10-29T19:20:00+09:00"])
 def test_fixed_regular_refreshes_each_run_without_history(tmp_path,monkeypatch,stamp):
     import render_card
     calls=[]
@@ -157,3 +162,21 @@ def test_evening_history_filename_uses_jst(tmp_path,monkeypatch):
     result=render_outputs(data,tmp_path)
     assert result["cards"]["regular"]=="out/cards/20261029-1900-regular.png"
     assert (tmp_path/result["cards"]["regular"]).read_bytes()==(tmp_path/"out/cards/latest_regular.png").read_bytes()
+
+
+def test_history_saved_once_per_window_and_again_next_day(tmp_path,monkeypatch):
+    import render_card
+    def fake_render(latest,output,kind,root):
+        output.write_text(latest["generated_at"],encoding="utf-8")
+    monkeypatch.setattr(render_card,"render",fake_render)
+    data=load("regular")
+    for stamp in ("2026-10-29T06:50:00+09:00","2026-10-29T07:19:59+09:00",
+                  "2026-10-29T18:50:00+09:00","2026-10-29T19:19:59+09:00",
+                  "2026-10-30T06:50:00+09:00"):
+        data["generated_at"]=stamp
+        render_outputs(data,tmp_path)
+        assert (tmp_path/"out/cards/latest_regular.png").read_text()==stamp
+    assert sorted(p.name for p in (tmp_path/"out/cards").glob("*-regular.png"))==[
+        "20261029-0650-regular.png","20261029-1850-regular.png","20261030-0650-regular.png"]
+    assert (tmp_path/"out/cards/20261029-0650-regular.png").read_text()=="2026-10-29T06:50:00+09:00"
+    assert (tmp_path/"out/cards/20261029-1850-regular.png").read_text()=="2026-10-29T18:50:00+09:00"

@@ -235,9 +235,12 @@ def cleanup_cards(folder, now):
 
 def scheduled_regular(now, previous):
     local=now.astimezone(JST)
-    # Archive only runs timestamped 07:00 or 19:00 JST; no delayed catch-up.
-    slot={7:"morning",19:"evening"}.get(local.hour) if local.minute==0 else None
-    return f"{local:%Y-%m-%d}-{slot}" if slot else None
+    minute=local.hour*60+local.minute
+    slot=("morning" if 6*60+50<=minute<7*60+20 else
+          "evening" if 18*60+50<=minute<19*60+20 else None)
+    if slot is None: return None
+    key=f"{local:%Y-%m-%d}-{slot}"
+    return key if previous.get(slot)!=key else None
 
 
 def render_outputs(latest,root=ROOT):
