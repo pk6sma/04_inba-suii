@@ -3,3 +3,13 @@ __pycache__/
 .pytest_cache/
 out/
 .local/
+
+docs/sponsor.png
+docs/reference_card.png
+mediakit/
+assets/map_underlay_reference_v1*
+assets/basemap_simple.*
+tools/simplify_basemap.py
+*.md
+!README.md
+!MAP_README.md

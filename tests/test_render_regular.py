@@ -80,3 +80,28 @@ def test_card_path_has_no_tile_or_latlon_dependencies():
     assert "basemap_schematic.png" in source
     for obsolete in ("basemap_simple.png", "basemap.json", "latlon_to_pixel", "地理院タイル"):
         assert obsolete not in source
+
+def test_missing_configured_logo_renders_sponsor_text_from_other_cwd(tmp_path, monkeypatch):
+    import shutil
+    from PIL import ImageDraw
+    workspace = tmp_path / "checkout"
+    shutil.copytree(ROOT / "data", workspace / "data")
+    shutil.copytree(ROOT / "assets/fonts", workspace / "assets/fonts")
+    shutil.copyfile(ROOT / "assets/basemap_schematic.png", workspace / "assets/basemap_schematic.png")
+    shutil.copyfile(ROOT / "config.json", workspace / "config.json")
+    config = json.loads((workspace / "config.json").read_text(encoding="utf-8"))
+    assert not (workspace / config["sponsor"]["logo_path"]).exists()
+    printed = []
+    original = ImageDraw.ImageDraw.text
+    def record(self, xy, text, *args, **kwargs):
+        printed.append(str(text))
+        return original(self, xy, text, *args, **kwargs)
+    monkeypatch.setattr(ImageDraw.ImageDraw, "text", record)
+    latest = fixture()
+    monkeypatch.chdir(tmp_path)  # Must resolve assets relative to checkout, not shell cwd.
+    output = workspace / "out/cards/without-logo.png"
+    result = render(latest, output, root=workspace)
+    assert result["sponsor"] is True
+    assert config["sponsor"]["text"] in printed
+    with Image.open(output) as image:
+        assert image.size == (1200, 675)
