@@ -209,7 +209,7 @@ def render(latest, output, kind="regular", root=ROOT):
     text(12,639,"表示は各観測所の表示基準による速報値です",12,"white",max_width=282)
     text(319,634,"避難判断は各市の防災情報・気象庁の発表で",12,"white")
     text(319,652,"確認してください",12,"white")
-    text(749,634,"出典：印旛沼水位情報（mizukan.sakura.ne.jp）／",11,"white")
+    text(749,634,"出典：印旛沼水位情報（mizukan.sakura.ne.jp/suii/）／",11,"white")
     text(749,652,"千葉県 雨量・水位情報",11,"white")
     output.parent.mkdir(parents=True,exist_ok=True)
     card.save(output)

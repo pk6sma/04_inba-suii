@@ -18,8 +18,20 @@ def load(name):
     ("regular","regular","基準あり3地点 すべて基準未満"),
     ("event","event","高崎川｜鏑木橋 はん濫注意水位を超過"),
     ("missing","regular","確認済み7地点／未取得2地点")])
-def test_cards(name,kind,expected,tmp_path):
+def test_cards(name,kind,expected,tmp_path,monkeypatch):
+    from PIL import ImageDraw
+    source_boxes=[]
+    original=ImageDraw.ImageDraw.text
+    def record(self,xy,text,*args,**kwargs):
+        if str(text).startswith("出典："):
+            assert text=="出典：印旛沼水位情報（mizukan.sakura.ne.jp/suii/）／"
+            source_boxes.append(self.textbbox(xy,text,font=kwargs["font"],anchor=kwargs.get("anchor")))
+        return original(self,xy,text,*args,**kwargs)
+    monkeypatch.setattr(ImageDraw.ImageDraw,"text",record)
     result=render(load(name),tmp_path/f"{name}.png",kind)
+    assert len(source_boxes)==1
+    left,top,right,bottom=source_boxes[0]
+    assert 735<=left<right<=1200 and 625<=top<bottom<=675
     assert result["badge"]==expected
     assert result["sponsor"]==(name=="regular")
     with Image.open(result["output"]) as im: assert im.size==(1200,675)
