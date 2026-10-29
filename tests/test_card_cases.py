@@ -79,11 +79,11 @@ def test_no_sponsor_for_event_even_after_recovery(tmp_path):
 
 @pytest.mark.parametrize("stamp,previous,expected",[
     ("2026-10-29T06:49:00+09:00",{},None),
-    ("2026-10-29T06:50:00+09:00",{},"2026-10-29-morning"),
+    ("2026-10-29T06:50:00+09:00",{},None),
     ("2026-10-29T07:00:00+09:00",{"morning":"2026-10-29-morning"},"2026-10-29-morning"),
-    ("2026-10-29T07:10:00+09:00",{},"2026-10-29-morning"),
+    ("2026-10-29T07:10:00+09:00",{},None),
     ("2026-10-29T07:10:00+09:00",{"morning":"2026-10-29-morning"},None),
-    ("2026-10-29T18:50:00+09:00",{},"2026-10-29-evening"),
+    ("2026-10-29T18:50:00+09:00",{},None),
     ("2026-10-29T19:00:00+09:00",{},"2026-10-29-evening"),
     ("2026-10-29T10:00:00+00:00",{},"2026-10-29-evening")])
 def test_regular_schedule(stamp,previous,expected):
@@ -104,13 +104,18 @@ def test_auto_outputs_regular_and_event_and_fixed_alias(tmp_path):
         shutil.copytree(ROOT/folder,tmp_path/folder)
     shutil.copyfile(ROOT/"config.json",tmp_path/"config.json")
     latest=load("event")
-    latest["generated_at"]="2026-10-29T06:50:00+09:00"
+    latest["generated_at"]="2026-10-29T07:00:00+09:00"
     manifest=render_outputs(latest,tmp_path)
     assert set(manifest["cards"])=={"regular","event"}
     assert (tmp_path/"out/cards/latest_regular.png").read_bytes()==(tmp_path/manifest["cards"]["regular"]).read_bytes()
+    history=tmp_path/manifest["cards"]["regular"]
+    original=history.read_bytes()
+    latest=load("missing")
     latest["generated_at"]="2026-10-29T07:10:00+09:00"
-    latest["events"]=[]
-    assert render_outputs(latest,tmp_path)["cards"]=={}
+    assert render_outputs(latest,tmp_path)["cards"]=={"regular":"out/cards/latest_regular.png"}
+    assert (tmp_path/"out/cards/latest_regular.png").read_bytes()!=original
+    assert history.read_bytes()==original
+    assert sorted(p.name for p in (tmp_path/"out/cards").glob("*-regular.png"))==["20261029-0700-regular.png"]
 
 
 def test_facility_state_uses_saved_source_id(tmp_path):
@@ -120,3 +125,35 @@ def test_facility_state_uses_saved_source_id(tmp_path):
     with Image.open(result["output"]) as im:
         assert im.getcolors(maxcolors=1000000) is not None
         assert any(color == (197,48,48) for _,color in im.getcolors(maxcolors=1000000))
+
+
+@pytest.mark.parametrize("stamp",["2026-10-29T06:40:00+09:00","2026-10-29T12:10:00+09:00","2026-10-29T19:10:00+09:00"])
+def test_fixed_regular_refreshes_each_run_without_history(tmp_path,monkeypatch,stamp):
+    import render_card
+    calls=[]
+    def fake_render(latest,output,kind,root):
+        calls.append((latest["generated_at"],kind))
+        output.write_text(json.dumps(latest),encoding="utf-8")
+    monkeypatch.setattr(render_card,"render",fake_render)
+    data=load("regular")
+    data["generated_at"]=stamp
+    render_outputs(data,tmp_path)
+    fixed=tmp_path/"out/cards/latest_regular.png"
+    before=fixed.read_bytes()
+    data["generated_at"]=(datetime.fromisoformat(stamp)+timedelta(minutes=10)).isoformat()
+    data["stations"][0]["level_m"]=1.23
+    result=render_outputs(data,tmp_path)
+    assert fixed.read_bytes()!=before
+    assert len(calls)==2
+    assert result["cards"]=={"regular":"out/cards/latest_regular.png"}
+    assert list((tmp_path/"out/cards").glob("*-regular.png"))==[]
+
+
+def test_evening_history_filename_uses_jst(tmp_path,monkeypatch):
+    import render_card
+    monkeypatch.setattr(render_card,"render",lambda latest,output,kind,root: output.write_bytes(b"card"))
+    data=load("regular")
+    data["generated_at"]="2026-10-29T10:00:45+00:00"
+    result=render_outputs(data,tmp_path)
+    assert result["cards"]["regular"]=="out/cards/20261029-1900-regular.png"
+    assert (tmp_path/result["cards"]["regular"]).read_bytes()==(tmp_path/"out/cards/latest_regular.png").read_bytes()

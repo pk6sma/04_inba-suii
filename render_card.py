@@ -3,7 +3,7 @@ import argparse
 import json
 import re
 import shutil
-from datetime import datetime, timedelta, time
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -235,32 +235,32 @@ def cleanup_cards(folder, now):
 
 def scheduled_regular(now, previous):
     local=now.astimezone(JST)
-    t=local.time().replace(tzinfo=None)
-    slot="morning" if time(6,50)<=t<time(12) else ("evening" if t>=time(18,50) else None)
-    if slot is None: return None
-    key=f"{local:%Y-%m-%d}-{slot}"
-    in_window=(time(6,50)<=t<time(7,1)) or (time(18,50)<=t<time(19,1))
-    return key if in_window or previous.get(slot)!=key else None
+    # Archive only runs timestamped 07:00 or 19:00 JST; no delayed catch-up.
+    slot={7:"morning",19:"evening"}.get(local.hour) if local.minute==0 else None
+    return f"{local:%Y-%m-%d}-{slot}" if slot else None
 
 
 def render_outputs(latest,root=ROOT):
     root=Path(root)
-    now=datetime.fromisoformat(latest["generated_at"])
+    now=datetime.fromisoformat(latest["generated_at"]).astimezone(JST)
     out=root/"out"
     folder=out/"cards"
     folder.mkdir(parents=True,exist_ok=True)
     schedule_path=out/"card_schedule.json"
     schedule=read_json(schedule_path) if schedule_path.exists() else {}
     slot=scheduled_regular(now,schedule)
-    kinds=(["regular"] if slot else [])+(["event"] if latest["events"] else [])
-    cards={}
-    for kind in kinds:
-        path=folder/f"{now:%Y%m%d-%H%M}-{kind}.png"
-        render(latest,path,kind,root)
-        cards[kind]=path.relative_to(root).as_posix()
-        if kind=="regular":
-            shutil.copyfile(path,folder/"latest_regular.png")
-            schedule[slot.rsplit("-",1)[1]]=slot
+    fixed=folder/"latest_regular.png"
+    render(latest,fixed,"regular",root)
+    cards={"regular":fixed.relative_to(root).as_posix()}
+    if slot:
+        history=folder/f"{now:%Y%m%d-%H%M}-regular.png"
+        shutil.copyfile(fixed,history)
+        cards["regular"]=history.relative_to(root).as_posix()
+        schedule[slot.rsplit("-",1)[1]]=slot
+    if latest["events"]:
+        path=folder/f"{now:%Y%m%d-%H%M}-event.png"
+        render(latest,path,"event",root)
+        cards["event"]=path.relative_to(root).as_posix()
     from inba_watch import write_json
     if slot: write_json(schedule_path,schedule)
     cleanup_cards(folder,now)
