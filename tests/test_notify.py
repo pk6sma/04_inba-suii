@@ -50,7 +50,9 @@ def test_one_retry_success_and_idempotent_log(tmp_path):
     env={"GROK_WEBHOOK_URL":"https://test.invalid/private-hook","GROK_WEBHOOK_KEY":"test-secret"}
     result=notify(latest(),tmp_path,env,post,card_url="https://raw.githubusercontent.com/x/y/rev/card.png")
     assert result=={"status":"sent","attempts":2}
-    assert calls[0][1]["headers"]["X-Webhook-Key"]=="test-secret"
+    for _, request in calls:
+        assert request["headers"]["Authorization"]=="Bearer test-secret"
+        assert "X-Webhook-Key" not in request["headers"]
     assert calls[0][1]["allow_redirects"] is False
     assert notify(latest(),tmp_path,env,forbidden)["status"]=="already-sent"
     log=(tmp_path/"out/notify_log.csv").read_text()

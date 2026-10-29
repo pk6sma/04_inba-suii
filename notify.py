@@ -82,19 +82,13 @@ def notify(latest,root=ROOT,environ=None,poster=None,card_url=None):
     except (OSError,ValueError,KeyError,TypeError):
         log_result(root,latest,key,"failed",error_type="card-not-ready")
         return {"status":"failed","attempts":0}
-    config_path=root/"config.json"
-    config=json.loads(config_path.read_text(encoding="utf-8")) if config_path.exists() else {}
-    header=config.get("webhook",{}).get("header_name","X-Webhook-Key")
-    if not re.fullmatch(r"[A-Za-z0-9-]+",header) or header.lower() in ("host","content-length","user-agent","content-type"):
-        log_result(root,latest,key,"failed",error_type="invalid-header-name")
-        return {"status":"failed","attempts":0}
     payload=build_payload(latest,resolved_url)
     post=poster or requests.post
     for attempt in (1,2):  # initial attempt plus at most ONE retry
         status_code=""
         error_type=""
         try:
-            response=post(url,json=payload,headers={header:secret,"User-Agent":USER_AGENT},
+            response=post(url,json=payload,headers={"Authorization":"Bearer "+secret,"User-Agent":USER_AGENT},
                           timeout=(10,30),allow_redirects=False)
             status_code=response.status_code
             success=200<=status_code<300
