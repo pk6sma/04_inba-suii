@@ -453,6 +453,7 @@ mismatch.log、stale_suspect.logの発生条件には該当しませんでした
     "fetched": 11,
     "failed": 0,
     "stale": 0
+
   },
   "events": []
 }
