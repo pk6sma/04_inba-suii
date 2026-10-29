@@ -1,0 +1,84 @@
+{
+  "labels": [
+    {
+      "id": "inba",
+      "text": "印旛沼",
+      "lat": 35.767,
+      "lon": 140.205,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    },
+    {
+      "id": "tone",
+      "text": "利根川",
+      "lat": 35.87,
+      "lon": 140.3,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    },
+    {
+      "id": "tokyo_bay",
+      "text": "東京湾",
+      "lat": 35.625,
+      "lon": 140.02,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    },
+    {
+      "id": "sakura",
+      "text": "佐倉",
+      "lat": 35.72,
+      "lon": 140.28,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    },
+    {
+      "id": "inzai",
+      "text": "印西",
+      "lat": 35.8,
+      "lon": 140.13,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    },
+    {
+      "id": "narita",
+      "text": "成田",
+      "lat": 35.81,
+      "lon": 140.35,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    },
+    {
+      "id": "yachiyo",
+      "text": "八千代",
+      "lat": 35.735,
+      "lon": 140.08,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    },
+    {
+      "id": "sakae",
+      "text": "栄",
+      "lat": 35.855,
+      "lon": 140.31,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    },
+    {
+      "id": "yotsukaido",
+      "text": "四街道",
+      "lat": 35.67,
+      "lon": 140.225,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    },
+    {
+      "id": "hanamigawa",
+      "text": "千葉市花見川区",
+      "lat": 35.65,
+      "lon": 140.14,
+      "coord_status": "candidate",
+      "note": "文字の配置用仮座標。地理的な代表点や観測地点の確定座標ではない"
+    }
+  ]
+}
