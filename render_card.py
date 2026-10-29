@@ -13,6 +13,7 @@ from sources.common import JST
 from judge import RANK
 
 ROOT = Path(__file__).resolve().parent
+REGULAR_CARD_BASE_URL = "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/"
 NAVY, BLUE, LIGHT, GRAY = "#0B2545", "#1F5FBF", "#63B3ED", "#718096"
 
 
@@ -223,9 +224,9 @@ def cleanup_cards(folder, now):
     removed=[]
     if not folder.exists(): return removed
     for path in folder.iterdir():
-        match=re.fullmatch(r"(\d{8}-\d{4})-(regular|event)\.png",path.name)
+        match=re.fullmatch(r"(?:(\d{8}-\d{4})-(?:regular|event)|regular_(\d{8}-\d{4}))\.png",path.name)
         if not match or path.is_symlink() or not path.is_file(): continue
-        stamp=datetime.strptime(match[1],"%Y%m%d-%H%M").replace(tzinfo=JST)
+        stamp=datetime.strptime(match[1] or match[2],"%Y%m%d-%H%M").replace(tzinfo=JST)
         if now.astimezone(JST)-stamp>timedelta(days=7):
             if path.resolve().parent != folder: raise ValueError("Unsafe cleanup path")
             path.unlink()
@@ -254,6 +255,8 @@ def render_outputs(latest,root=ROOT):
     slot=scheduled_regular(now,schedule)
     fixed=folder/"latest_regular.png"
     render(latest,fixed,"regular",root)
+    timestamped=folder/f"regular_{now:%Y%m%d-%H%M}.png"
+    shutil.copyfile(fixed,timestamped)
     cards={"regular":fixed.relative_to(root).as_posix()}
     if slot:
         history=folder/f"{now:%Y%m%d-%H%M}-regular.png"
@@ -269,6 +272,7 @@ def render_outputs(latest,root=ROOT):
     cleanup_cards(folder,now)
     manifest={"generated_at":latest["generated_at"],"cards":cards}
     write_json(out/"card_manifest.json",manifest)
+    write_json(out/"latest.json",{**latest,"card_url":REGULAR_CARD_BASE_URL+timestamped.name})
     return manifest
 
 

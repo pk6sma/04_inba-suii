@@ -97,10 +97,13 @@ def test_regular_schedule(stamp,previous,expected):
 
 def test_cleanup_keeps_fixed_samples_and_exact_seven_days(tmp_path):
     now=datetime.fromisoformat("2026-10-29T07:00:00+09:00")
-    names=["20261022-0659-event.png","20261022-0700-regular.png","latest_regular.png","sample_event.png","user.png"]
+    names=["20261022-0659-event.png","20261022-0700-regular.png","latest_regular.png","sample_event.png","user.png",
+           "regular_20261022-0659.png","regular_20261022-0700.png","regular_20261029-0700.png","regular_sample.png"]
     for name in names: (tmp_path/name).write_bytes(b"generated-test-output")
-    assert cleanup_cards(tmp_path,now)==["20261022-0659-event.png"]
-    assert all((tmp_path/name).exists() for name in names[1:])
+    removed={"20261022-0659-event.png","regular_20261022-0659.png"}
+    assert set(cleanup_cards(tmp_path,now))==removed
+    assert all((tmp_path/name).exists() for name in names if name not in removed)
+    assert all(not (tmp_path/name).exists() for name in removed)
 
 
 def test_auto_outputs_regular_and_event_and_fixed_alias(tmp_path):
@@ -145,11 +148,19 @@ def test_fixed_regular_refreshes_each_run_without_history(tmp_path,monkeypatch,s
     render_outputs(data,tmp_path)
     fixed=tmp_path/"out/cards/latest_regular.png"
     before=fixed.read_bytes()
+    first=tmp_path/f"out/cards/regular_{datetime.fromisoformat(stamp):%Y%m%d-%H%M}.png"
+    assert first.read_bytes()==before
     data["generated_at"]=(datetime.fromisoformat(stamp)+timedelta(minutes=10)).isoformat()
     data["stations"][0]["level_m"]=1.23
     result=render_outputs(data,tmp_path)
     assert fixed.read_bytes()!=before
     assert len(calls)==2
+    second=tmp_path/f"out/cards/regular_{datetime.fromisoformat(data['generated_at']):%Y%m%d-%H%M}.png"
+    assert second.read_bytes()==fixed.read_bytes()
+    assert first.read_bytes()==before
+    saved=json.loads((tmp_path/"out/latest.json").read_text(encoding="utf-8"))
+    assert saved=={**data,"card_url":"https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/"+second.name}
+    assert len(list((tmp_path/"out/cards").glob("regular_*.png")))==2
     assert result["cards"]=={"regular":"out/cards/latest_regular.png"}
     assert list((tmp_path/"out/cards").glob("*-regular.png"))==[]
 
@@ -161,6 +172,9 @@ def test_evening_history_filename_uses_jst(tmp_path,monkeypatch):
     data["generated_at"]="2026-10-29T10:00:45+00:00"
     result=render_outputs(data,tmp_path)
     assert result["cards"]["regular"]=="out/cards/20261029-1900-regular.png"
+    assert (tmp_path/"out/cards/regular_20261029-1900.png").read_bytes()==b"card"
+    saved=json.loads((tmp_path/"out/latest.json").read_text(encoding="utf-8"))
+    assert saved["card_url"].endswith("/regular_20261029-1900.png")
     assert (tmp_path/result["cards"]["regular"]).read_bytes()==(tmp_path/"out/cards/latest_regular.png").read_bytes()
 
 
