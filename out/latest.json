@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-01T07:06:15.116442+09:00",
+  "generated_at": "2026-11-01T07:10:46.133010+09:00",
   "sources": {
     "mizukan": {
       "observed_at": "2026-11-01T07:00:00+09:00",
-      "fetched_at": "2026-11-01T07:06:14.462221+09:00",
+      "fetched_at": "2026-11-01T07:10:45.443934+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 4129,
@@ -12,7 +12,7 @@
     "chiba_suibo": {
       "observed_at": "2026-11-01T07:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-01T07:06:15.091412+09:00",
+      "fetched_at": "2026-11-01T07:10:46.108032+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 2414,
@@ -83,7 +83,7 @@
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "up",
+      "trend": "flat",
       "delta_1h": 0.35
     },
     {
@@ -133,7 +133,7 @@
       "status": "ok",
       "observed_at": "2026-11-01T07:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-01T07:06:15.091412+09:00",
+      "fetched_at": "2026-11-01T07:10:46.108032+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -147,7 +147,7 @@
       "status": "ok",
       "observed_at": "2026-11-01T07:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-01T07:06:15.091412+09:00",
+      "fetched_at": "2026-11-01T07:10:46.108032+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -161,10 +161,10 @@
       "status": "ok",
       "observed_at": "2026-11-01T07:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-01T07:06:15.091412+09:00",
+      "fetched_at": "2026-11-01T07:10:46.108032+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "up",
+      "trend": "flat",
       "delta_1h": 0.0
     }
   ],
@@ -227,5 +227,5 @@
     "stale": 0
   },
   "events": [],
-  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261101-0706.png"
+  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261101-0710.png"
 }
