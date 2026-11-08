@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-08T23:27:30.797905+09:00",
+  "generated_at": "2026-11-08T23:31:29.183948+09:00",
   "sources": {
     "mizukan": {
       "observed_at": "2026-11-08T23:20:00+09:00",
-      "fetched_at": "2026-11-08T23:27:30.184054+09:00",
+      "fetched_at": "2026-11-08T23:31:28.601052+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 4129,
@@ -12,7 +12,7 @@
     "chiba_suibo": {
       "observed_at": "2026-11-08T23:20:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-08T23:27:30.780309+09:00",
+      "fetched_at": "2026-11-08T23:31:29.160054+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 2414,
@@ -96,7 +96,7 @@
       "water_icon": "ico_010121_suii_0_1.gif",
       "water_icon_code": "0_1",
       "level": "no_threshold",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": -0.01
     },
     {
@@ -133,10 +133,10 @@
       "status": "ok",
       "observed_at": "2026-11-08T23:20:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-08T23:27:30.780309+09:00",
+      "fetched_at": "2026-11-08T23:31:29.160054+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": 0.0
     },
     {
@@ -147,7 +147,7 @@
       "status": "ok",
       "observed_at": "2026-11-08T23:20:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-08T23:27:30.780309+09:00",
+      "fetched_at": "2026-11-08T23:31:29.160054+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -161,7 +161,7 @@
       "status": "ok",
       "observed_at": "2026-11-08T23:20:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-08T23:27:30.780309+09:00",
+      "fetched_at": "2026-11-08T23:31:29.160054+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -227,5 +227,5 @@
     "stale": 0
   },
   "events": [],
-  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261108-2327.png"
+  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261108-2331.png"
 }
