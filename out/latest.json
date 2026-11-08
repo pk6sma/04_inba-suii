@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-09T07:06:14.337403+09:00",
+  "generated_at": "2026-11-09T07:11:20.403406+09:00",
   "sources": {
     "mizukan": {
       "observed_at": "2026-11-09T07:00:00+09:00",
-      "fetched_at": "2026-11-09T07:06:13.741610+09:00",
+      "fetched_at": "2026-11-09T07:11:19.593446+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 4129,
@@ -12,7 +12,7 @@
     "chiba_suibo": {
       "observed_at": "2026-11-09T07:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-09T07:06:14.323812+09:00",
+      "fetched_at": "2026-11-09T07:11:20.379900+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 2419,
@@ -64,14 +64,14 @@
       "id": "amado",
       "name": "花見川｜天戸",
       "source": "mizukan",
-      "level_m": 4.28,
+      "level_m": 4.29,
       "status": "ok",
       "observed_at": "2026-11-09T07:00:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
       "trend": "up",
-      "delta_1h": 0.03
+      "delta_1h": 0.04
     },
     {
       "id": "kemigawa",
@@ -83,7 +83,7 @@
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": -0.19
     },
     {
@@ -133,10 +133,10 @@
       "status": "ok",
       "observed_at": "2026-11-09T07:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-09T07:06:14.323812+09:00",
+      "fetched_at": "2026-11-09T07:11:20.379900+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "up",
+      "trend": "flat",
       "delta_1h": 0.06
     },
     {
@@ -147,7 +147,7 @@
       "status": "ok",
       "observed_at": "2026-11-09T07:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-09T07:06:14.323812+09:00",
+      "fetched_at": "2026-11-09T07:11:20.379900+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -161,7 +161,7 @@
       "status": "ok",
       "observed_at": "2026-11-09T07:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-09T07:06:14.323812+09:00",
+      "fetched_at": "2026-11-09T07:11:20.379900+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -227,5 +227,5 @@
     "stale": 0
   },
   "events": [],
-  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261109-0706.png"
+  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261109-0711.png"
 }
