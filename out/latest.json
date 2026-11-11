@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-11T19:19:47.987698+09:00",
+  "generated_at": "2026-11-11T19:21:29.036404+09:00",
   "sources": {
     "mizukan": {
       "observed_at": "2026-11-11T19:10:00+09:00",
-      "fetched_at": "2026-11-11T19:19:47.221379+09:00",
+      "fetched_at": "2026-11-11T19:21:28.374866+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 4129,
@@ -12,7 +12,7 @@
     "chiba_suibo": {
       "observed_at": "2026-11-11T19:10:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-11T19:19:47.963975+09:00",
+      "fetched_at": "2026-11-11T19:21:29.014633+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 2419,
@@ -133,10 +133,10 @@
       "status": "ok",
       "observed_at": "2026-11-11T19:10:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-11T19:19:47.963975+09:00",
+      "fetched_at": "2026-11-11T19:21:29.014633+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": -0.01
     },
     {
@@ -147,7 +147,7 @@
       "status": "ok",
       "observed_at": "2026-11-11T19:10:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-11T19:19:47.963975+09:00",
+      "fetched_at": "2026-11-11T19:21:29.014633+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -161,7 +161,7 @@
       "status": "ok",
       "observed_at": "2026-11-11T19:10:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-11T19:19:47.963975+09:00",
+      "fetched_at": "2026-11-11T19:21:29.014633+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -227,5 +227,5 @@
     "stale": 0
   },
   "events": [],
-  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261111-1919.png"
+  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261111-1921.png"
 }
