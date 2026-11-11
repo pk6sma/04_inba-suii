@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T05:57:36.937380+09:00",
+  "generated_at": "2026-11-12T06:01:53.008788+09:00",
   "sources": {
     "mizukan": {
       "observed_at": "2026-11-12T05:50:00+09:00",
-      "fetched_at": "2026-11-12T05:57:36.320569+09:00",
+      "fetched_at": "2026-11-12T06:01:52.281400+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 4129,
@@ -12,7 +12,7 @@
     "chiba_suibo": {
       "observed_at": "2026-11-12T05:50:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-12T05:57:36.919486+09:00",
+      "fetched_at": "2026-11-12T06:01:52.988968+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 2414,
@@ -31,7 +31,7 @@
       "water_icon": "ico_010121_suii_1_0.gif",
       "water_icon_code": "1_0",
       "level": "no_threshold",
-      "trend": "up",
+      "trend": "flat",
       "delta_1h": 0.03
     },
     {
@@ -44,7 +44,7 @@
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": -0.01
     },
     {
@@ -83,7 +83,7 @@
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "up",
+      "trend": "flat",
       "delta_1h": 0.18
     },
     {
@@ -133,7 +133,7 @@
       "status": "ok",
       "observed_at": "2026-11-12T05:50:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-12T05:57:36.919486+09:00",
+      "fetched_at": "2026-11-12T06:01:52.988968+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -147,7 +147,7 @@
       "status": "ok",
       "observed_at": "2026-11-12T05:50:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-12T05:57:36.919486+09:00",
+      "fetched_at": "2026-11-12T06:01:52.988968+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -161,7 +161,7 @@
       "status": "ok",
       "observed_at": "2026-11-12T05:50:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-12T05:57:36.919486+09:00",
+      "fetched_at": "2026-11-12T06:01:52.988968+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -227,5 +227,5 @@
     "stale": 0
   },
   "events": [],
-  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261112-0557.png"
+  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261112-0601.png"
 }
