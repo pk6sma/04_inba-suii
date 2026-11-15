@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-15T21:21:14.967112+09:00",
+  "generated_at": "2026-11-15T21:31:29.222997+09:00",
   "sources": {
     "mizukan": {
-      "observed_at": "2026-11-15T21:10:00+09:00",
-      "fetched_at": "2026-11-15T21:21:14.207767+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
+      "fetched_at": "2026-11-15T21:31:28.422544+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 4127,
       "http_status": 200
     },
     "chiba_suibo": {
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-15T21:21:14.943371+09:00",
+      "fetched_at": "2026-11-15T21:31:29.199277+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 2419,
@@ -25,9 +25,9 @@
       "id": "ajiki",
       "name": "利根川｜安食",
       "source": "mizukan",
-      "level_m": 1.18,
+      "level_m": 1.19,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "water_icon": "ico_010121_suii_1_0.gif",
       "water_icon_code": "1_0",
       "level": "no_threshold",
@@ -38,9 +38,9 @@
       "id": "nagato",
       "name": "長門川",
       "source": "mizukan",
-      "level_m": 1.19,
+      "level_m": 1.2,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "water_icon": "ico_010121_suii_1_0.gif",
       "water_icon_code": "1_0",
       "level": "no_threshold",
@@ -53,50 +53,50 @@
       "source": "mizukan",
       "level_m": 2.39,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "up",
-      "delta_1h": 0.04
+      "trend": "flat",
+      "delta_1h": 0.03
     },
     {
       "id": "amado",
       "name": "花見川｜天戸",
       "source": "mizukan",
-      "level_m": 4.37,
+      "level_m": 4.38,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "flat",
+      "trend": "up",
       "delta_1h": 0.05
     },
     {
       "id": "kemigawa",
       "name": "花見川｜検見川",
       "source": "mizukan",
-      "level_m": 1.17,
+      "level_m": 1.14,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
       "trend": "down",
-      "delta_1h": -0.16
+      "delta_1h": -0.17
     },
     {
       "id": "inba_average",
       "name": "印旛沼平均",
       "source": "mizukan",
-      "level_m": 2.24,
+      "level_m": 2.25,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
-      "water_icon": "ico_010121_suii_0_2.gif",
-      "water_icon_code": "0_2",
+      "observed_at": "2026-11-15T21:20:00+09:00",
+      "water_icon": "ico_010121_suii_0_0.gif",
+      "water_icon_code": "0_0",
       "level": "no_threshold",
-      "trend": "flat",
+      "trend": "up",
       "delta_1h": 0.01
     },
     {
@@ -105,7 +105,7 @@
       "source": "mizukan",
       "level_m": 2.23,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
@@ -118,12 +118,12 @@
       "source": "mizukan",
       "level_m": 2.26,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "up",
-      "delta_1h": 0.04
+      "trend": "flat",
+      "delta_1h": 0.01
     },
     {
       "id": "kaburagi",
@@ -131,13 +131,13 @@
       "source": "chiba_suibo",
       "level_m": 2.46,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-15T21:21:14.943371+09:00",
+      "fetched_at": "2026-11-15T21:31:29.199277+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "up",
-      "delta_1h": 0.04
+      "trend": "flat",
+      "delta_1h": 0.03
     },
     {
       "id": "kitainba",
@@ -145,27 +145,27 @@
       "source": "chiba_suibo",
       "level_m": 2.23,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-15T21:21:14.943371+09:00",
+      "fetched_at": "2026-11-15T21:31:29.199277+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
-      "delta_1h": 0.01
+      "delta_1h": 0.0
     },
     {
       "id": "nishiinba",
       "name": "西印旛沼",
       "source": "chiba_suibo",
-      "level_m": 2.25,
+      "level_m": 2.26,
       "status": "ok",
-      "observed_at": "2026-11-15T21:10:00+09:00",
+      "observed_at": "2026-11-15T21:20:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-15T21:21:14.943371+09:00",
+      "fetched_at": "2026-11-15T21:31:29.199277+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "flat",
-      "delta_1h": 0.01
+      "trend": "up",
+      "delta_1h": 0.04
     }
   ],
   "facilities": [
@@ -227,5 +227,5 @@
     "stale": 0
   },
   "events": [],
-  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261115-2121.png"
+  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261115-2131.png"
 }
