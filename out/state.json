@@ -50,22 +50,22 @@
     },
     "kaburagi": {
       "level": "normal",
-      "level_m": 2.45,
-      "observed_at": "2026-11-16T12:00:00+09:00",
+      "level_m": 2.43,
+      "observed_at": "2026-11-16T12:10:00+09:00",
       "last_events": {}
     },
     "kitainba": {
       "level": "normal",
       "level_m": 2.32,
-      "observed_at": "2026-11-16T12:00:00+09:00",
+      "observed_at": "2026-11-16T12:10:00+09:00",
       "last_events": {}
     },
     "nishiinba": {
       "level": "normal",
       "level_m": 2.34,
-      "observed_at": "2026-11-16T12:00:00+09:00",
+      "observed_at": "2026-11-16T12:10:00+09:00",
       "last_events": {}
     }
   },
-  "updated_at": "2026-11-16T12:15:15.947734+09:00"
+  "updated_at": "2026-11-16T12:20:39.185534+09:00"
 }
