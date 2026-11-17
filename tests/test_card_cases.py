@@ -194,3 +194,21 @@ def test_history_saved_once_per_window_and_again_next_day(tmp_path,monkeypatch):
         "20261029-0650-regular.png","20261029-1850-regular.png","20261030-0650-regular.png"]
     assert (tmp_path/"out/cards/20261029-0650-regular.png").read_text()=="2026-10-29T06:50:00+09:00"
     assert (tmp_path/"out/cards/20261029-1850-regular.png").read_text()=="2026-10-29T18:50:00+09:00"
+
+
+@pytest.mark.parametrize("state,expected", [
+    ("排水中", "#C53030"), ("停止", "#2F855A"), ("揚水中", "#B7791F"),
+    ("故障・欠測", "#718096"), ("unknown", "#CBD5E0"),
+])
+def test_facility_marker_color(tmp_path, state, expected):
+    from PIL import ImageColor
+    latest = load("regular")
+    facilities = json.loads((ROOT/"data/facilities.json").read_text(encoding="utf-8"))["facilities"]
+    target = next(f for f in facilities if f["id"] == "owada_kijo")
+    next(f for f in latest["facilities"] if f["id"] == target["source_id"])["state"] = state
+    path = tmp_path/"state.png"
+    render(latest, path)
+    x, y = target["px"]
+    width, height = target["px_basis"]["size"]
+    with Image.open(path) as card:
+        assert card.getpixel((12+round(x*700/width), 65+round(y*560/height))) == ImageColor.getrgb(expected)

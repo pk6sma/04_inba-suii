@@ -17,6 +17,12 @@ REGULAR_CARD_BASE_URL = "https://raw.githubusercontent.com/pk6sma/04_inba-suii/m
 NAVY, BLUE, LIGHT, GRAY = "#0B2545", "#1F5FBF", "#63B3ED", "#718096"
 
 
+FACILITY_COLORS = {
+    "排水中": "#C53030", "停止": "#2F855A", "揚水中": "#B7791F", "故障・欠測": "#718096",
+}
+UNKNOWN_FACILITY_COLOR = "#CBD5E0"
+
+
 def read_json(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
@@ -136,8 +142,9 @@ def render(latest, output, kind="regular", root=ROOT):
         x,y = map_x+px,map_y+py
         # Match only an explicit stable ID. Never guess a source icon order.
         state=next((f["state"] for f in latest["facilities"] if f["id"]==facility.get("source_id",facility["id"])),"unknown")
-        facility_color={"排水中":"#C53030","停止":"#2F855A","揚水中":"#B7791F",
-                        "故障":"#718096","欠測":"#718096","故障・欠測":"#718096"}.get(state,GRAY)
+        if state in ("故障", "欠測"):
+            state = "故障・欠測"
+        facility_color = FACILITY_COLORS.get(state, UNKNOWN_FACILITY_COLOR)
         if "機場" in facility["name"]:
             draw.polygon([(x-5,y-6),(x+5,y-6),(x+8,y+6),(x-8,y+6)],fill=facility_color,outline="white")
         else:
@@ -159,6 +166,11 @@ def render(latest, output, kind="regular", root=ROOT):
     # Facility legend and schematic notice. No GSI attribution for this background.
     draw.rectangle((map_x,map_y+539,map_x+699,map_y+559),fill="white")
     text(map_x+6,map_y+543,"■水門  ▲排水機場",12,GRAY)
+    legend_x = map_x+132
+    for label, color in FACILITY_COLORS.items():
+        draw.ellipse((legend_x, map_y+545, legend_x+9, map_y+554), fill=color)
+        text(legend_x+13, map_y+543, label, 12, GRAY)
+        legend_x += 24 + round(draw.textlength(label, font=font(12, root=root)))
     text(map_x+691,map_y+543,"位置関係模式図",12,GRAY,anchor="rt")
 
     # Nine rows, source-specific north/south values from the county records.

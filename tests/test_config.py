@@ -19,5 +19,7 @@ def test_config():
     assert set(codes) == {p.name for p in icons}
     for p in icons:
         with Image.open(p) as image:
-            pixels = Counter(rgb[:3] for rgb in image.convert("RGBA").getdata() if rgb[3])
+            rgba = image.convert("RGBA")
+            pixels = Counter(c[:3] for y in range(rgba.height) for x in range(rgba.width)
+                             if (c := rgba.getpixel((x, y)))[3])
         assert codes[p.name] == colors[pixels.most_common(1)[0][0]]
