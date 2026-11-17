@@ -10,7 +10,13 @@ def test_fixture(config, fixture_data):
     assert result["source"]["observed_at"] == "2026-10-29T03:40:00+09:00"
     assert [r["level_m"] for r in result["stations"]] == [0.91, 0.98, 2.15, 4.25, 0.32, 2.01, 2.00, 2.03]
     assert len(result["facilities"]) == 7
-    assert all(f["state"] == "unknown" for f in result["facilities"])
+    assert all((f["state"], f["state_label"]) == ("unknown", "不明") for f in result["facilities"])
+    icon = result["facilities"][0]["icon"]
+    mapped = parse(html, [s for s in config["stations"] if s["source"] == "mizukan"],
+                   fetched_at, {icon: "停止"})
+    for f in mapped["facilities"]:
+        expected = ("停止", "停止") if f["icon"] == icon else ("unknown", "不明")
+        assert (f["state"], f["state_label"]) == expected
 
 
 def test_seven_values_fails_all(config, fixture_data):

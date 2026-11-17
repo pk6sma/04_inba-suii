@@ -47,9 +47,13 @@ def parse(html, stations, fetched_at, facility_codes=None):
                           if "ico_010121_kijou_" in img.get("src", "")]
         if len(facility_icons) != 7 or not all(FACILITY_ICON.fullmatch(i) for i in facility_icons):
             raise ValueError("Expected exactly seven facility icons")
-        facilities = [{"id": f"facility_{i}", "name": f"施設{i}（文書順）", "order": i,
-                       "icon": icon, "state": (facility_codes or {}).get(icon, "unknown")}
-                      for i, icon in enumerate(facility_icons, 1)]
+        facilities = []
+        for order, icon in enumerate(facility_icons, 1):
+            state = (facility_codes or {}).get(icon, "unknown")
+            facilities.append({
+                "id": f"facility_{order}", "name": f"施設{order}（文書順）", "order": order,
+                "icon": icon, "state": state, "state_label": "不明" if state == "unknown" else state,
+            })
         return {"source": {"observed_at": observed.isoformat(), "fetched_at": fetched_at.isoformat(),
                            "status": freshness(observed, fetched_at)},
                 "stations": rows, "facilities": facilities}

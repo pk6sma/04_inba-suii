@@ -174,49 +174,56 @@
       "name": "施設1（文書順）",
       "order": 1,
       "icon": "ico_010121_kijou_0_1.gif",
-      "state": "unknown"
+      "state": "停止",
+      "state_label": "停止"
     },
     {
       "id": "facility_2",
       "name": "施設2（文書順）",
       "order": 2,
       "icon": "ico_010121_kijou_2_2.gif",
-      "state": "unknown"
+      "state": "排水中",
+      "state_label": "排水中"
     },
     {
       "id": "facility_3",
       "name": "施設3（文書順）",
       "order": 3,
       "icon": "ico_010121_kijou_0_0.gif",
-      "state": "unknown"
+      "state": "故障・欠測",
+      "state_label": "故障・欠測"
     },
     {
       "id": "facility_4",
       "name": "施設4（文書順）",
       "order": 4,
       "icon": "ico_010121_kijou_2_2.gif",
-      "state": "unknown"
+      "state": "排水中",
+      "state_label": "排水中"
     },
     {
       "id": "facility_5",
       "name": "施設5（文書順）",
       "order": 5,
       "icon": "ico_010121_kijou_0_1.gif",
-      "state": "unknown"
+      "state": "停止",
+      "state_label": "停止"
     },
     {
       "id": "facility_6",
       "name": "施設6（文書順）",
       "order": 6,
       "icon": "ico_010121_kijou_1_1.gif",
-      "state": "unknown"
+      "state": "停止",
+      "state_label": "停止"
     },
     {
       "id": "facility_7",
       "name": "施設7（文書順）",
       "order": 7,
       "icon": "ico_010121_kijou_1_1.gif",
-      "state": "unknown"
+      "state": "停止",
+      "state_label": "停止"
     }
   ],
   "summary": {
