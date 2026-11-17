@@ -1,7 +1,6 @@
 {
-  "generated_at": "2026-11-18T02:51:32.251994+09:00",
+  "generated_at": "2026-11-18T03:01:27.482994+09:00",
   "cards": {
-    "regular": "out/cards/latest_regular.png",
-    "event": "out/cards/20261118-0251-event.png"
+    "regular": "out/cards/latest_regular.png"
   }
 }
