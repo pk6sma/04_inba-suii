@@ -3,69 +3,69 @@
     "ajiki": {
       "level": "no_threshold",
       "level_m": 1.29,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "nagato": {
       "level": "no_threshold",
-      "level_m": 1.51,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "level_m": 1.52,
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "hatori": {
       "level": "no_threshold",
-      "level_m": 2.88,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "level_m": 2.9,
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "amado": {
       "level": "no_threshold",
-      "level_m": 4.34,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "level_m": 4.35,
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "kemigawa": {
       "level": "no_threshold",
-      "level_m": 0.87,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "level_m": 0.85,
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "inba_average": {
       "level": "no_threshold",
-      "level_m": 2.22,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "level_m": 2.23,
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "yoshitaka_aux": {
       "level": "no_threshold",
       "level_m": 2.14,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "usui_aux": {
       "level": "no_threshold",
-      "level_m": 2.28,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "level_m": 2.29,
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "kaburagi": {
       "level": "normal",
-      "level_m": 3.33,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "level_m": 3.37,
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "kitainba": {
       "level": "normal",
       "level_m": 2.14,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     },
     "nishiinba": {
       "level": "normal",
-      "level_m": 2.27,
-      "observed_at": "2026-11-18T01:40:00+09:00",
+      "level_m": 2.28,
+      "observed_at": "2026-11-18T01:50:00+09:00",
       "last_events": {}
     }
   },
-  "updated_at": "2026-11-18T01:51:07.850814+09:00"
+  "updated_at": "2026-11-18T02:01:26.987846+09:00"
 }
