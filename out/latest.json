@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-18T12:06:21.203139+09:00",
+  "generated_at": "2026-11-18T12:11:25.720839+09:00",
   "sources": {
     "mizukan": {
       "observed_at": "2026-11-18T12:00:00+09:00",
-      "fetched_at": "2026-11-18T12:06:20.417094+09:00",
+      "fetched_at": "2026-11-18T12:11:25.106083+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 4123,
@@ -12,7 +12,7 @@
     "chiba_suibo": {
       "observed_at": "2026-11-18T12:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-18T12:06:21.178100+09:00",
+      "fetched_at": "2026-11-18T12:11:25.694576+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 2435,
@@ -57,7 +57,7 @@
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": -0.06
     },
     {
@@ -96,7 +96,7 @@
       "water_icon": "ico_010121_suii_0_0.gif",
       "water_icon_code": "0_0",
       "level": "no_threshold",
-      "trend": "up",
+      "trend": "flat",
       "delta_1h": 0.01
     },
     {
@@ -109,7 +109,7 @@
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "up",
+      "trend": "flat",
       "delta_1h": 0.03
     },
     {
@@ -122,7 +122,7 @@
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "up",
+      "trend": "flat",
       "delta_1h": 0.0
     },
     {
@@ -133,10 +133,10 @@
       "status": "ok",
       "observed_at": "2026-11-18T12:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-18T12:06:21.178100+09:00",
+      "fetched_at": "2026-11-18T12:11:25.694576+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": -0.05
     },
     {
@@ -147,7 +147,7 @@
       "status": "ok",
       "observed_at": "2026-11-18T12:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-18T12:06:21.178100+09:00",
+      "fetched_at": "2026-11-18T12:11:25.694576+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -161,10 +161,10 @@
       "status": "ok",
       "observed_at": "2026-11-18T12:00:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-18T12:06:21.178100+09:00",
+      "fetched_at": "2026-11-18T12:11:25.694576+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": -0.03
     }
   ],
@@ -234,5 +234,5 @@
     "stale": 0
   },
   "events": [],
-  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261118-1206.png"
+  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261118-1211.png"
 }
