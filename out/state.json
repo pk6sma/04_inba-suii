@@ -2,50 +2,50 @@
   "stations": {
     "ajiki": {
       "level": "no_threshold",
-      "level_m": 1.24,
-      "observed_at": "2026-11-20T03:10:00+09:00",
+      "level_m": 1.23,
+      "observed_at": "2026-11-20T03:20:00+09:00",
       "last_events": {}
     },
     "nagato": {
       "level": "no_threshold",
       "level_m": 1.27,
-      "observed_at": "2026-11-20T03:10:00+09:00",
+      "observed_at": "2026-11-20T03:20:00+09:00",
       "last_events": {}
     },
     "hatori": {
       "level": "no_threshold",
       "level_m": 2.41,
-      "observed_at": "2026-11-20T03:10:00+09:00",
+      "observed_at": "2026-11-20T03:20:00+09:00",
       "last_events": {}
     },
     "amado": {
       "level": "no_threshold",
       "level_m": 4.39,
-      "observed_at": "2026-11-20T03:10:00+09:00",
+      "observed_at": "2026-11-20T03:20:00+09:00",
       "last_events": {}
     },
     "kemigawa": {
       "level": "no_threshold",
-      "level_m": 1.28,
-      "observed_at": "2026-11-20T03:10:00+09:00",
+      "level_m": 1.29,
+      "observed_at": "2026-11-20T03:20:00+09:00",
       "last_events": {}
     },
     "inba_average": {
       "level": "no_threshold",
       "level_m": 2.32,
-      "observed_at": "2026-11-20T03:10:00+09:00",
+      "observed_at": "2026-11-20T03:20:00+09:00",
       "last_events": {}
     },
     "yoshitaka_aux": {
       "level": "no_threshold",
       "level_m": 2.31,
-      "observed_at": "2026-11-20T03:10:00+09:00",
+      "observed_at": "2026-11-20T03:20:00+09:00",
       "last_events": {}
     },
     "usui_aux": {
       "level": "no_threshold",
       "level_m": 2.33,
-      "observed_at": "2026-11-20T03:10:00+09:00",
+      "observed_at": "2026-11-20T03:20:00+09:00",
       "last_events": {}
     },
     "kaburagi": {
@@ -69,5 +69,5 @@
       "last_events": {}
     }
   },
-  "updated_at": "2026-11-20T03:21:49.692991+09:00"
+  "updated_at": "2026-11-20T03:23:13.593576+09:00"
 }
