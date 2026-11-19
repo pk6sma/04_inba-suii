@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-19T10:31:27.527440+09:00",
+  "generated_at": "2026-11-19T10:41:18.432330+09:00",
   "sources": {
     "mizukan": {
-      "observed_at": "2026-11-19T10:20:00+09:00",
-      "fetched_at": "2026-11-19T10:31:26.902247+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
+      "fetched_at": "2026-11-19T10:41:17.839324+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 4123,
       "http_status": 200
     },
     "chiba_suibo": {
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-19T10:31:27.506940+09:00",
+      "fetched_at": "2026-11-19T10:41:18.412347+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 2419,
@@ -25,13 +25,13 @@
       "id": "ajiki",
       "name": "利根川｜安食",
       "source": "mizukan",
-      "level_m": 1.23,
+      "level_m": 1.24,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
-      "water_icon": "ico_010121_suii_1_2.gif",
-      "water_icon_code": "1_2",
+      "observed_at": "2026-11-19T10:30:00+09:00",
+      "water_icon": "ico_010121_suii_1_0.gif",
+      "water_icon_code": "1_0",
       "level": "no_threshold",
-      "trend": "flat",
+      "trend": "up",
       "delta_1h": 0.0
     },
     {
@@ -40,9 +40,9 @@
       "source": "mizukan",
       "level_m": 1.59,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
-      "water_icon": "ico_010121_suii_1_1.gif",
-      "water_icon_code": "1_1",
+      "observed_at": "2026-11-19T10:30:00+09:00",
+      "water_icon": "ico_010121_suii_1_2.gif",
+      "water_icon_code": "1_2",
       "level": "no_threshold",
       "trend": "flat",
       "delta_1h": -0.01
@@ -53,12 +53,12 @@
       "source": "mizukan",
       "level_m": 2.46,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
       "trend": "flat",
-      "delta_1h": -0.02
+      "delta_1h": -0.01
     },
     {
       "id": "amado",
@@ -66,7 +66,7 @@
       "source": "mizukan",
       "level_m": 4.28,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
@@ -77,14 +77,14 @@
       "id": "kemigawa",
       "name": "花見川｜検見川",
       "source": "mizukan",
-      "level_m": 1.32,
+      "level_m": 1.4,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "flat",
-      "delta_1h": 0.24
+      "trend": "up",
+      "delta_1h": 0.31
     },
     {
       "id": "inba_average",
@@ -92,12 +92,12 @@
       "source": "mizukan",
       "level_m": 2.36,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "water_icon": "ico_010121_suii_0_2.gif",
       "water_icon_code": "0_2",
       "level": "no_threshold",
       "trend": "flat",
-      "delta_1h": -0.01
+      "delta_1h": 0.0
     },
     {
       "id": "yoshitaka_aux",
@@ -105,12 +105,12 @@
       "source": "mizukan",
       "level_m": 2.33,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
       "trend": "flat",
-      "delta_1h": -0.01
+      "delta_1h": 0.0
     },
     {
       "id": "usui_aux",
@@ -118,12 +118,12 @@
       "source": "mizukan",
       "level_m": 2.38,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
       "trend": "flat",
-      "delta_1h": -0.01
+      "delta_1h": 0.01
     },
     {
       "id": "kaburagi",
@@ -131,9 +131,9 @@
       "source": "chiba_suibo",
       "level_m": 2.49,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-19T10:31:27.506940+09:00",
+      "fetched_at": "2026-11-19T10:41:18.412347+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -145,9 +145,9 @@
       "source": "chiba_suibo",
       "level_m": 2.33,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-19T10:31:27.506940+09:00",
+      "fetched_at": "2026-11-19T10:41:18.412347+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -157,15 +157,15 @@
       "id": "nishiinba",
       "name": "西印旛沼",
       "source": "chiba_suibo",
-      "level_m": 2.39,
+      "level_m": 2.38,
       "status": "ok",
-      "observed_at": "2026-11-19T10:20:00+09:00",
+      "observed_at": "2026-11-19T10:30:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-19T10:31:27.506940+09:00",
+      "fetched_at": "2026-11-19T10:41:18.412347+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "flat",
-      "delta_1h": 0.0
+      "trend": "down",
+      "delta_1h": -0.01
     }
   ],
   "facilities": [
@@ -234,5 +234,5 @@
     "stale": 0
   },
   "events": [],
-  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261119-1031.png"
+  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261119-1041.png"
 }
