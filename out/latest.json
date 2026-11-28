@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-28T18:11:22.580667+09:00",
+  "generated_at": "2026-11-28T18:21:35.743022+09:00",
   "sources": {
     "mizukan": {
-      "observed_at": "2026-11-28T18:00:00+09:00",
-      "fetched_at": "2026-11-28T18:11:21.774964+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
+      "fetched_at": "2026-11-28T18:21:34.850600+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 4123,
       "http_status": 200
     },
     "chiba_suibo": {
-      "observed_at": "2026-11-28T18:00:00+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-28T18:11:22.557369+09:00",
+      "fetched_at": "2026-11-28T18:21:35.727804+09:00",
       "status": "ok",
       "encoding": "shift_jis",
       "response_bytes": 2419,
@@ -25,26 +25,26 @@
       "id": "ajiki",
       "name": "利根川｜安食",
       "source": "mizukan",
-      "level_m": 1.23,
+      "level_m": 1.25,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
-      "water_icon": "ico_010121_suii_1_2.gif",
-      "water_icon_code": "1_2",
+      "observed_at": "2026-11-28T18:10:00+09:00",
+      "water_icon": "ico_010121_suii_1_0.gif",
+      "water_icon_code": "1_0",
       "level": "no_threshold",
-      "trend": "flat",
-      "delta_1h": 0.02
+      "trend": "up",
+      "delta_1h": 0.04
     },
     {
       "id": "nagato",
       "name": "長門川",
       "source": "mizukan",
-      "level_m": 1.48,
+      "level_m": 1.49,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
-      "water_icon": "ico_010121_suii_1_2.gif",
-      "water_icon_code": "1_2",
+      "observed_at": "2026-11-28T18:10:00+09:00",
+      "water_icon": "ico_010121_suii_1_0.gif",
+      "water_icon_code": "1_0",
       "level": "no_threshold",
-      "trend": "flat",
+      "trend": "up",
       "delta_1h": 0.07
     },
     {
@@ -53,11 +53,11 @@
       "source": "mizukan",
       "level_m": 2.43,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": -0.04
     },
     {
@@ -66,25 +66,25 @@
       "source": "mizukan",
       "level_m": 4.39,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
       "trend": "flat",
-      "delta_1h": -0.01
+      "delta_1h": 0.0
     },
     {
       "id": "kemigawa",
       "name": "花見川｜検見川",
       "source": "mizukan",
-      "level_m": 1.88,
+      "level_m": 1.84,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
-      "trend": "up",
-      "delta_1h": 0.15
+      "trend": "down",
+      "delta_1h": 0.13
     },
     {
       "id": "inba_average",
@@ -92,12 +92,12 @@
       "source": "mizukan",
       "level_m": 2.34,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
       "water_icon": "ico_010121_suii_0_2.gif",
       "water_icon_code": "0_2",
       "level": "no_threshold",
       "trend": "flat",
-      "delta_1h": -0.02
+      "delta_1h": -0.01
     },
     {
       "id": "yoshitaka_aux",
@@ -105,25 +105,25 @@
       "source": "mizukan",
       "level_m": 2.3,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
-      "water_icon": "ico_010121_suii_1_2.gif",
-      "water_icon_code": "1_2",
-      "level": "no_threshold",
-      "trend": "down",
-      "delta_1h": -0.03
-    },
-    {
-      "id": "usui_aux",
-      "name": "西印旛沼｜臼井（補助値）",
-      "source": "mizukan",
-      "level_m": 2.36,
-      "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
       "water_icon": "ico_010121_suii_1_2.gif",
       "water_icon_code": "1_2",
       "level": "no_threshold",
       "trend": "flat",
       "delta_1h": -0.02
+    },
+    {
+      "id": "usui_aux",
+      "name": "西印旛沼｜臼井（補助値）",
+      "source": "mizukan",
+      "level_m": 2.37,
+      "status": "ok",
+      "observed_at": "2026-11-28T18:10:00+09:00",
+      "water_icon": "ico_010121_suii_1_2.gif",
+      "water_icon_code": "1_2",
+      "level": "no_threshold",
+      "trend": "up",
+      "delta_1h": 0.0
     },
     {
       "id": "kaburagi",
@@ -131,27 +131,27 @@
       "source": "chiba_suibo",
       "level_m": 2.48,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-28T18:11:22.557369+09:00",
+      "fetched_at": "2026-11-28T18:21:35.727804+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "down",
+      "trend": "flat",
       "delta_1h": -0.03
     },
     {
       "id": "kitainba",
       "name": "北印旛沼",
       "source": "chiba_suibo",
-      "level_m": 2.31,
+      "level_m": 2.3,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-28T18:11:22.557369+09:00",
+      "fetched_at": "2026-11-28T18:21:35.727804+09:00",
       "stale_suspect": false,
       "level": "normal",
-      "trend": "flat",
-      "delta_1h": -0.02
+      "trend": "down",
+      "delta_1h": -0.03
     },
     {
       "id": "nishiinba",
@@ -159,9 +159,9 @@
       "source": "chiba_suibo",
       "level_m": 2.36,
       "status": "ok",
-      "observed_at": "2026-11-28T18:00:00+09:00",
+      "observed_at": "2026-11-28T18:10:00+09:00",
       "observed_date_inferred": true,
-      "fetched_at": "2026-11-28T18:11:22.557369+09:00",
+      "fetched_at": "2026-11-28T18:21:35.727804+09:00",
       "stale_suspect": false,
       "level": "normal",
       "trend": "flat",
@@ -234,5 +234,5 @@
     "stale": 0
   },
   "events": [],
-  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261128-1811.png"
+  "card_url": "https://raw.githubusercontent.com/pk6sma/04_inba-suii/master/out/cards/regular_20261128-1821.png"
 }
